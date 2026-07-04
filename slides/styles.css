@@ -27,7 +27,7 @@
   background-image: url("backgrounds/actex-cover-bg.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .reveal .slides {

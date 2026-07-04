@@ -16,8 +16,9 @@ format:
     footer: "ACTEX Bootcamp: R for Actuaries 2026"
     title-slide-attributes:
       data-background-image: "backgrounds/actex-cover-bg.png"
-      data-background-size: "cover"
+      data-background-size: "contain"
       data-background-position: "center"
+      data-background-repeat: "no-repeat"
     include-after-body:
       text: |
         <a class="course-back-link" href="../index.html">Back to course materials</a>
@@ -410,7 +411,7 @@ Render report
 [Open the mini-project notebook](../case-study/actuarial-mini-project.html)
 :::
 
-## Close {.closing-slide data-background-image="backgrounds/actex-cover-bg.png" data-background-size="cover" data-background-position="center"}
+## Close {.closing-slide data-background-image="backgrounds/actex-cover-bg.png" data-background-size="contain" data-background-position="center" data-background-repeat="no-repeat"}
 
 ::: {.closing-principle}
 Write code that another actuary can understand, reproduce, and trust.
