@@ -70,8 +70,8 @@
 
 .course-back-link {
   position: fixed;
-  top: 0.55rem;
-  right: 0.75rem;
+  top: 1.05rem;
+  right: 0.65rem;
   z-index: 50;
   padding: 0.28rem 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.36);
@@ -79,7 +79,7 @@
   background: rgba(8, 40, 61, 0.90);
   color: #ffffff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.44rem;
+  font-size: 0.64rem;
   font-weight: 760;
   line-height: 1;
   text-decoration: none;
@@ -150,9 +150,10 @@
 
 .day-path {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.56em;
   margin-top: 0.82em;
+  max-width: 76%;
 }
 
 .path-item,
@@ -191,6 +192,41 @@
   background: var(--orange-soft);
 }
 
+.day-path .path-item:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.day-path .path-item:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.day-path .path-item:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.day-path .path-item:nth-child(4) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.day-path .path-item:nth-child(5) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.day-path .path-item:nth-child(6) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.day-path .path-item:nth-child(7) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
 .workflow-ribbon {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -224,8 +260,14 @@
 
 .split-slide .columns {
   align-items: center;
-  gap: 1.3em;
+  gap: 0.55em;
+  width: 88%;
+  margin: 0.35em auto 0;
 }
+
+/*.split-slide h2 {
+  text-align: center;
+}*/
 
 .step-card,
 .info-card {
@@ -375,11 +417,21 @@
   display: block;
   max-height: 55vh;
   width: auto;
-  max-width: 100%;
+  max-width: 90%;
   margin: 0 auto 0.28em;
   border: 1px solid var(--line);
   border-radius: 0.38em;
   box-shadow: 0 7px 20px rgba(8, 40, 61, 0.09);
+}
+
+.split-slide img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 62vh;
+}
+
+.split-slide .step-card {
+  min-height: 8.7em;
 }
 
 .caption {
@@ -603,12 +655,12 @@
 
 .reveal pre code {
   border-radius: 0.4em;
-  font-size: 0.74em;
+  font-size: 0.94em;
   line-height: 1.3;
 }
 
 .reveal .code-slide pre code {
-  font-size: 0.7em;
+  font-size: 0.9em;
   line-height: 1.3;
 }
 

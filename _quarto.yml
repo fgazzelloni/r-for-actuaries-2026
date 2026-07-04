@@ -14,6 +14,7 @@ website:
   title: "R for Actuaries 2026"
   favicon: images/actex_logo.png
   page-navigation: true
+  repo-url: https://github.com/fgazzelloni/r-for-actuaries-2026
   repo-actions: [edit, issue]
   sidebar:
     logo: images/actex_logo.png
@@ -22,10 +23,8 @@ website:
     contents:
       - href: index.qmd
         text: Course Overview
-      - section: Slides
-        contents:
-          - href: slides/r-for-actuaries-2026.qmd
-            text: Combined Course Deck
+      - href: slides/r-for-actuaries-2026.qmd
+        text: Presentation Slides
       - section: Sessions
         contents:
           - href: sessions/01-introduction.qmd
