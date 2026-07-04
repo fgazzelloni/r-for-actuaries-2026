@@ -520,7 +520,20 @@
   text-decoration: none;
 }
 
-.cover-slide h2,
+.cover-slide h2 {
+  display: block;
+  width: 54%;
+  max-width: 54%;
+  margin-left: 19rem;
+  padding: 0.22em 0.5em;
+  border-radius: 0.28em;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--navy);
+  font-size: 1.26em;
+  line-height: 1.08;
+  box-shadow: 0 6px 18px rgba(8, 40, 61, 0.08);
+}
+
 .closing-slide h2 {
   display: inline-block;
   width: auto;
@@ -557,6 +570,7 @@
 .cover-meta {
   display: inline-block;
   width: auto;
+  max-width: 44%;
   margin-top: 0.5em;
   border-left: 5px solid var(--orange);
   font-size: 0.72em;
