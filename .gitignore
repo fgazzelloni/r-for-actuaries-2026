@@ -5,4 +5,8 @@
 .DS_Store
 /.quarto/
 /_freeze/
+docs/*
+!docs/.gitkeep
 
+
+**/*.quarto_ipynb

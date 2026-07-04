@@ -19,6 +19,8 @@ execute:
 
 This repository contains the teaching materials for the 2026 cohort of R for Actuaries.
 
+[Back to course materials](../index.html)
+
 Professional principle:
 
 > Write code that another actuary can understand, reproduce, and trust.
@@ -222,3 +224,5 @@ By the end of the course, participants have:
 The goal is not to memorise R functions.
 
 The goal is to solve actuarial problems in a way another actuary can understand, reproduce, and trust.
+
+[Back to course materials](../index.html)

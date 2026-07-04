@@ -1,12 +1,22 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - sessions/*.qmd
+    - case-study/*.qmd
+    - exercises/*.qmd
+    - solutions/*.qmd
+    - ai/*.qmd
+    - slides/r-for-actuaries-2026.qmd
 
 website:
   title: "R for Actuaries 2026"
+  favicon: images/actex_logo.png
   page-navigation: true
   repo-actions: [edit, issue]
   sidebar:
+    logo: images/actex_logo.png
     style: docked
     search: true
     contents:

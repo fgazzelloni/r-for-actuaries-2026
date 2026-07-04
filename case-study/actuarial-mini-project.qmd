@@ -46,8 +46,8 @@ We start by reading the raw data. Keeping raw data in `data/raw/` makes the anal
 ```{r}
 #| label: import-data
 
-policies <- read_csv("data/raw/policies.csv", show_col_types = FALSE)
-claims <- read_csv("data/raw/claims.csv", show_col_types = FALSE)
+policies <- read_csv("../data/raw/policies.csv", show_col_types = FALSE)
+claims <- read_csv("../data/raw/claims.csv", show_col_types = FALSE)
 
 # Convert date columns from text to Date objects.
 # This lets R compare dates correctly later.
@@ -393,9 +393,9 @@ The processed dataset is saved after validation and derivation. This file can be
 ```{r}
 #| label: save-processed-data
 
-dir.create("data/processed", showWarnings = FALSE, recursive = TRUE)
+dir.create("../data/processed", showWarnings = FALSE, recursive = TRUE)
 
-write_csv(portfolio, "data/processed/portfolio_clean.csv")
+write_csv(portfolio, "../data/processed/portfolio_clean.csv")
 ```
 
 ## Final Notes
