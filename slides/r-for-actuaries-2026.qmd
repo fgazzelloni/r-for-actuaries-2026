@@ -49,7 +49,7 @@ Orientation
 ::: {.path-item}
 **Session 1**
 
-Import and validate
+Data checks
 :::
 
 ::: {.path-item .pause-chip}
@@ -69,7 +69,7 @@ Analyse
 ::: {.path-item}
 **Session 3**
 
-Visualise, report, use AI
+Visualise and report
 :::
 
 ::: {.path-item}
@@ -133,16 +133,26 @@ Charts and report
 
 ## R Setup And Project Structure {.setup-slide}
 
-::: {.folder-map}
-```text
+::: {.folder-tree}
+::: {.folder-root}
 r-for-actuaries-2026/
-  data/
-    raw/
-    processed/
-  case-study/
-  sessions/
-  slides/
-```
+:::
+
+::: {.folder-row}
+data/ -> raw/ and processed/
+:::
+
+::: {.folder-row}
+case-study/ -> mini-project notebook
+:::
+
+::: {.folder-row}
+sessions/ -> course pages
+:::
+
+::: {.folder-row}
+slides/ -> teaching deck
+:::
 :::
 
 ::: {.callout}
@@ -168,10 +178,10 @@ Import · Inspect · Validate
 ```r
 library(readr)
 
-policies <- read_csv("data/raw/policies.csv")
-claims <- read_csv("data/raw/claims.csv")
+p <- read_csv("data/raw/policies.csv")
+c <- read_csv("data/raw/claims.csv")
 
-glimpse(policies)
+glimpse(p)
 ```
 :::
 
@@ -208,6 +218,10 @@ Inspect the data · Talk to the person next to you · Name one risk
 5
 :::
 
+::: {.pause-label}
+minute pause
+:::
+
 ::: {.mini-prompt}
 Stretch, reset, and keep the project open.
 :::
@@ -229,10 +243,8 @@ Join · Derive · Summarise
 ::: {.columns}
 ::: {.column width="45%"}
 ```r
-portfolio <- claims |>
-  left_join(policies, by = "policy_id")
-
-portfolio |>
+portfolio <- c |>
+  left_join(p, by = "policy_id") |>
   count(product, claim_type)
 ```
 :::
@@ -254,25 +266,25 @@ Portfolio view
 ::: {.metric-card}
 **Frequency**
 
-Claims / exposure
+claims / exposure
 :::
 
 ::: {.metric-card}
 **Severity**
 
-Claim cost / claims
+claim cost / claims
 :::
 
 ::: {.metric-card}
 **Pure premium**
 
-Claims / exposure
+claim cost / exposure
 :::
 
 ::: {.metric-card}
 **Loss ratio**
 
-Claims / premium
+claim cost / premium
 :::
 :::
 
@@ -296,6 +308,10 @@ Which product would you investigate first?
 
 ::: {.pause-time}
 5
+:::
+
+::: {.pause-label}
+minute pause
 :::
 
 ::: {.mini-prompt}
@@ -348,14 +364,26 @@ Render the mini-project notebook into a report another actuary can review.
 
 ## AI-Assisted Learning {.ai-slide}
 
-::: {.ai-checkpoint}
-**AI checkpoint**
+::: {.ai-flow}
+::: {.ai-step}
+Try
+:::
 
-1. Try the task yourself.
-2. Ask AI to explain or debug.
-3. Run the code.
-4. Check object names, data dimensions, missing values, and outputs.
-5. Rewrite the result in your own words.
+::: {.ai-step}
+Ask
+:::
+
+::: {.ai-step}
+Run
+:::
+
+::: {.ai-step}
+Check
+:::
+
+::: {.ai-step}
+Rewrite
+:::
 :::
 
 ::: {.mini-prompt}

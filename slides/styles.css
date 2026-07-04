@@ -60,7 +60,7 @@
 
 .reveal .slides section {
   box-sizing: border-box;
-  padding: 3.05rem 4.6rem 3rem 4.6rem;
+  padding: 2.7rem 4.35rem 3.15rem 4.35rem;
 }
 
 .reveal .slides section > * {
@@ -76,10 +76,10 @@
 
 .reveal h2 {
   color: var(--navy);
-  font-size: 1.85em;
+  font-size: 1.55em;
   font-weight: 820;
   line-height: 1.04;
-  margin-bottom: 0.42em;
+  margin-bottom: 0.34em;
 }
 
 .reveal h3 {
@@ -100,16 +100,16 @@
 
 .course-back-link {
   position: fixed;
-  top: 0.7rem;
-  right: 0.9rem;
+  top: 0.55rem;
+  right: 0.75rem;
   z-index: 50;
-  padding: 0.42rem 0.7rem;
+  padding: 0.32rem 0.58rem;
   border: 1px solid rgba(255, 255, 255, 0.36);
   border-radius: 999px;
   background: rgba(8, 40, 61, 0.92);
   color: #ffffff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.57rem;
+  font-size: 0.49rem;
   font-weight: 760;
   line-height: 1;
   text-decoration: none;
@@ -125,11 +125,14 @@
 
 .reveal .quarto-title-block {
   text-align: left;
+  width: 78%;
+  margin-left: 3.5rem;
+  transform: translateY(-0.75rem);
 }
 
 .reveal .quarto-title-block h1 {
   color: var(--navy);
-  font-size: 2.35em;
+  font-size: 2.05em;
   font-weight: 850;
   line-height: 1;
   margin-bottom: 0.18em;
@@ -151,9 +154,9 @@
 }
 
 .reveal .quarto-title-block .subtitle {
-  max-width: 68%;
+  max-width: 72%;
   color: var(--navy-2);
-  font-size: 0.78em;
+  font-size: 0.68em;
   line-height: 1.16;
   margin-top: 0.48em;
 }
@@ -161,8 +164,8 @@
 .reveal .quarto-title-block .quarto-title-authors,
 .reveal .quarto-title-block .date {
   color: var(--muted);
-  font-size: 0.52em;
-  margin-top: 0.7em;
+  font-size: 0.45em;
+  margin-top: 0.45em;
 }
 
 .scenario-card,
@@ -220,9 +223,9 @@
 
 .day-path {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 0.45em;
-  margin-top: 1em;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6em;
+  margin-top: 0.85em;
 }
 
 .path-item,
@@ -238,8 +241,8 @@
 }
 
 .path-item {
-  min-height: 6.3em;
-  padding: 0.62em;
+  min-height: 3.85em;
+  padding: 0.55em 0.65em;
   text-align: center;
   border-bottom: 5px solid var(--teal);
 }
@@ -251,7 +254,9 @@
 
 .path-item p {
   color: var(--muted);
-  font-size: 0.65em;
+  font-size: 0.6em;
+  line-height: 1.08;
+  margin-top: 0.18em;
 }
 
 .pause-chip {
@@ -280,7 +285,7 @@
   border-radius: 0.42em;
   background: var(--navy);
   color: var(--white);
-  font-size: 0.67em;
+  font-size: 0.61em;
   font-weight: 820;
   text-align: center;
   box-shadow: 0 7px 20px rgba(8, 40, 61, 0.13);
@@ -311,17 +316,41 @@
   line-height: 1.55;
 }
 
-.folder-map pre,
-.code-slide pre {
+.folder-tree {
+  max-width: 72%;
   margin-top: 0.8em;
+  display: grid;
+  gap: 0.38em;
+}
+
+.folder-root,
+.folder-row {
+  padding: 0.46em 0.7em;
+  border-radius: 0.35em;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid var(--line);
+  box-shadow: 0 5px 16px rgba(8, 40, 61, 0.06);
+  color: var(--navy);
+  font-size: 0.68em;
+  font-weight: 760;
+}
+
+.folder-root {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.code-slide pre {
+  width: 100%;
+  margin-top: 0.5em;
   box-shadow: none;
 }
 
-.folder-map code,
 .code-slide code {
   border-radius: 0.45em;
-  font-size: 0.72em;
-  line-height: 1.38;
+  font-size: 0.58em;
+  line-height: 1.25;
+  white-space: pre-wrap;
 }
 
 .setup-slide .callout,
@@ -348,7 +377,7 @@
 
 .section-slide h2 {
   color: var(--navy);
-  font-size: 2.18em;
+  font-size: 1.9em;
   line-height: 1;
   margin-bottom: 0.16em;
 }
@@ -386,7 +415,7 @@
 .figure-slide img,
 .split-slide img {
   display: block;
-  max-height: 58vh;
+  max-height: 56vh;
   width: auto;
   max-width: 100%;
   margin: 0 auto 0.28em auto;
@@ -396,7 +425,7 @@
 }
 
 .code-slide img {
-  max-height: 45vh;
+  max-height: 42vh;
 }
 
 .caption {
@@ -422,17 +451,24 @@
 }
 
 .pause-time {
-  width: 2.15em;
-  height: 2.15em;
+  width: 1.85em;
+  height: 1.85em;
   display: grid;
   place-items: center;
-  margin-top: 0.1em;
+  margin-top: 0.05em;
   border-radius: 50%;
   background: var(--orange);
   color: var(--white);
-  font-size: 2.1em;
+  font-size: 1.85em;
   font-weight: 850;
   box-shadow: 0 9px 26px rgba(212, 81, 42, 0.22);
+}
+
+.pause-label {
+  color: var(--navy);
+  font-size: 1.1em;
+  font-weight: 820;
+  margin-top: 0.25em;
 }
 
 .cards-slide .card-grid {
@@ -443,7 +479,7 @@
 }
 
 .metric-card {
-  min-height: 4.4em;
+  min-height: 3.75em;
   padding: 0.78em;
   text-align: center;
   border-bottom: 5px solid var(--teal);
@@ -451,12 +487,13 @@
 
 .metric-card strong {
   color: var(--navy);
-  font-size: 0.88em;
+  font-size: 0.82em;
 }
 
 .metric-card p {
-  font-size: 0.68em;
-  line-height: 1.16;
+  font-size: 0.58em;
+  line-height: 1.05;
+  white-space: nowrap;
 }
 
 .join-diagram {
@@ -495,35 +532,41 @@
 
 .report-block,
 .task-card {
-  min-height: 4em;
+  min-height: 3.45em;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.75em;
   color: var(--navy);
-  font-size: 0.8em;
+  font-size: 0.68em;
   font-weight: 820;
   text-align: center;
   border-bottom: 5px solid var(--teal);
 }
 
-.ai-checkpoint {
-  max-width: 82%;
-  padding: 0.85em 1em;
+.ai-flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.55em;
+  width: 92%;
+  margin-top: 1em;
+}
+
+.ai-step {
+  min-height: 3.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 0.45em;
-  background: rgba(255, 255, 255, 0.98);
-  border: 1px solid var(--line);
-  border-left: 8px solid var(--orange);
-  box-shadow: 0 7px 22px rgba(8, 40, 61, 0.08);
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.78em;
+  font-weight: 850;
+  box-shadow: 0 7px 20px rgba(8, 40, 61, 0.12);
 }
 
-.ai-checkpoint strong {
-  color: var(--navy);
-}
-
-.ai-checkpoint ol {
-  margin-top: 0.45em;
-  font-size: 0.66em;
+.ai-step:nth-child(even) {
+  background: var(--orange);
 }
 
 .task-grid {
