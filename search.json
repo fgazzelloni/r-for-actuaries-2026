@@ -1,0 +1,870 @@
+[
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#reproducible-analysis-visualization-and-ai-assisted-learning",
+    "href": "slides/r-for-actuaries-2026.html#reproducible-analysis-visualization-and-ai-assisted-learning",
+    "title": "R for Actuaries 2026",
+    "section": "Reproducible Analysis, Visualization,and AI-Assisted Learning",
+    "text": "Reproducible Analysis, Visualization,and AI-Assisted Learning\n\n27 August 2026 · Federica Gazzelloni",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#before-modelling",
+    "href": "slides/r-for-actuaries-2026.html#before-modelling",
+    "title": "R for Actuaries 2026",
+    "section": "Before Modelling",
+    "text": "Before Modelling\n\nYou receive policy and claims data.\nBefore modelling anything, can you trust the data?\n\n\nToday we use R to answer that question step by step.",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#course-principle",
+    "href": "slides/r-for-actuaries-2026.html#course-principle",
+    "title": "R for Actuaries 2026",
+    "section": "Course Principle",
+    "text": "Course Principle\n\nWrite code that another actuary can understand, reproduce, and trust.",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#one-day-learning-path",
+    "href": "slides/r-for-actuaries-2026.html#one-day-learning-path",
+    "title": "R for Actuaries 2026",
+    "section": "One-Day Learning Path",
+    "text": "One-Day Learning Path\n\n\nWelcome\nOrientation\n\n\nSession 1\nData checks\n\n\n5-minute pause\n\n\nSession 2\nAnalyse\n\n\n5-minute pause\n\n\nSession 3\nVisualise and report\n\n\nPractical\nMini-project",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#reproducible-actuarial-workflow",
+    "href": "slides/r-for-actuaries-2026.html#reproducible-actuarial-workflow",
+    "title": "R for Actuaries 2026",
+    "section": "Reproducible Actuarial Workflow",
+    "text": "Reproducible Actuarial Workflow\n\n\nRaw data\n\n\nValidation\n\n\nAnalysis\n\n\nVisualisation\n\n\nQuarto report\n\n\nGitHub publication\n\n\n\nThe workflow is part of the actuarial deliverable.",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#practical-mini-project",
+    "href": "slides/r-for-actuaries-2026.html#practical-mini-project",
+    "title": "R for Actuaries 2026",
+    "section": "Practical Mini-Project",
+    "text": "Practical Mini-Project\n\n\n\n\n\nOne case study\nPolicies Claims Validation Actuarial measures Charts and report",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#r-setup-and-project-structure",
+    "href": "slides/r-for-actuaries-2026.html#r-setup-and-project-structure",
+    "title": "R for Actuaries 2026",
+    "section": "R Setup And Project Structure",
+    "text": "R Setup And Project Structure\n\n\nr-for-actuaries-2026/\n\n\ndata/ -&gt; raw/ and processed/\n\n\ncase-study/ -&gt; mini-project notebook\n\n\nsessions/ -&gt; course pages\n\n\nslides/ -&gt; teaching deck\n\n\n\n\n\nOpen the R Project first. Work from the project root.",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#session-1",
+    "href": "slides/r-for-actuaries-2026.html#session-1",
+    "title": "R for Actuaries 2026",
+    "section": "Session 1",
+    "text": "Session 1\n\n01\n\nFrom raw data to checked data\n\nImport · Inspect · Validate",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#data-import",
+    "href": "slides/r-for-actuaries-2026.html#data-import",
+    "title": "R for Actuaries 2026",
+    "section": "Data Import",
+    "text": "Data Import\nlibrary(readr)\n\np &lt;- read_csv(\"data/raw/policies.csv\")\nc &lt;- read_csv(\"data/raw/claims.csv\")\n\nglimpse(p)\n\nStart by making the data visible.",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#data-validation",
+    "href": "slides/r-for-actuaries-2026.html#data-validation",
+    "title": "R for Actuaries 2026",
+    "section": "Data Validation",
+    "text": "Data Validation\n\n\nMissing values · Duplicates · Dates · Policy IDs · Numeric ranges",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#discussion",
+    "href": "slides/r-for-actuaries-2026.html#discussion",
+    "title": "R for Actuaries 2026",
+    "section": "Discussion",
+    "text": "Discussion\n\nWhat would you check before calculating claim frequency?\n\n\nInspect the data · Talk to the person next to you · Name one risk",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#minute-pause",
+    "href": "slides/r-for-actuaries-2026.html#minute-pause",
+    "title": "R for Actuaries 2026",
+    "section": "5-Minute Pause",
+    "text": "5-Minute Pause\n\n5\n\n\nminute pause\n\n\nStretch, reset, and keep the project open.",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#session-2",
+    "href": "slides/r-for-actuaries-2026.html#session-2",
+    "title": "R for Actuaries 2026",
+    "section": "Session 2",
+    "text": "Session 2\n\n02\n\nFrom checked data to actuarial insight\n\nJoin · Derive · Summarise",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#join-policies-and-claims",
+    "href": "slides/r-for-actuaries-2026.html#join-policies-and-claims",
+    "title": "R for Actuaries 2026",
+    "section": "Join Policies And Claims",
+    "text": "Join Policies And Claims\nportfolio &lt;- c |&gt;\n  left_join(p, by = \"policy_id\") |&gt;\n  count(product, claim_type)\n\nPolicies\nClaims\nPortfolio view",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#core-actuarial-measures",
+    "href": "slides/r-for-actuaries-2026.html#core-actuarial-measures",
+    "title": "R for Actuaries 2026",
+    "section": "Core Actuarial Measures",
+    "text": "Core Actuarial Measures\n\n\nFrequency\nclaims / exposure\n\n\nSeverity\nclaim cost / claims\n\n\nPure premium\nclaim cost / exposure\n\n\nLoss ratio\nclaim cost / premium",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#portfolio-summary",
+    "href": "slides/r-for-actuaries-2026.html#portfolio-summary",
+    "title": "R for Actuaries 2026",
+    "section": "Portfolio Summary",
+    "text": "Portfolio Summary\n\n\nUse summaries to understand portfolio shape before interpretation.",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#loss-ratio-view",
+    "href": "slides/r-for-actuaries-2026.html#loss-ratio-view",
+    "title": "R for Actuaries 2026",
+    "section": "Loss Ratio View",
+    "text": "Loss Ratio View\n\n\nWhich product would you investigate first?",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#minute-pause-1",
+    "href": "slides/r-for-actuaries-2026.html#minute-pause-1",
+    "title": "R for Actuaries 2026",
+    "section": "5-Minute Pause",
+    "text": "5-Minute Pause\n\n5\n\n\nminute pause\n\n\nNext: make the analysis communicable.",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#session-3",
+    "href": "slides/r-for-actuaries-2026.html#session-3",
+    "title": "R for Actuaries 2026",
+    "section": "Session 3",
+    "text": "Session 3\n\n03\n\nFrom analysis to communication\n\nVisualise · Explain · Render",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#visualisation-answers-questions",
+    "href": "slides/r-for-actuaries-2026.html#visualisation-answers-questions",
+    "title": "R for Actuaries 2026",
+    "section": "Visualisation Answers Questions",
+    "text": "Visualisation Answers Questions\n\n\nCharts should answer actuarial questions, not decorate reports.",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#quarto-reporting",
+    "href": "slides/r-for-actuaries-2026.html#quarto-reporting",
+    "title": "R for Actuaries 2026",
+    "section": "Quarto Reporting",
+    "text": "Quarto Reporting\n\n\nCode\n\n\nText\n\n\nTables\n\n\nFigures\n\n\n\n\n\nRender the mini-project notebook into a report another actuary can review.",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#ai-assisted-learning",
+    "href": "slides/r-for-actuaries-2026.html#ai-assisted-learning",
+    "title": "R for Actuaries 2026",
+    "section": "AI-Assisted Learning",
+    "text": "AI-Assisted Learning\n\n\nTry\n\n\nAsk\n\n\nRun\n\n\nCheck\n\n\nRewrite\n\n\n\nAI is a tutor, reviewer, and debugging partner, not an autopilot.",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#practical-session",
+    "href": "slides/r-for-actuaries-2026.html#practical-session",
+    "title": "R for Actuaries 2026",
+    "section": "Practical Session",
+    "text": "Practical Session\n\n\nImport data\n\n\nValidate checks\n\n\nCreate measures\n\n\nProduce plots\n\n\nRender report\n\n\n\nOpen the mini-project notebook",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "slides/r-for-actuaries-2026.html#thank-you",
+    "href": "slides/r-for-actuaries-2026.html#thank-you",
+    "title": "R for Actuaries 2026",
+    "section": "Thank You!",
+    "text": "Thank You!\n\nWrite code that another actuary can understand, reproduce, and trust.\n\n\nCourse materials Mini-project GitHub repository",
+    "crumbs": [
+      "Presentation Slides"
+    ]
+  },
+  {
+    "objectID": "ai/ai-use-guidelines.html",
+    "href": "ai/ai-use-guidelines.html",
+    "title": "AI Use Guidelines",
+    "section": "",
+    "text": "AI can support learning, debugging, and code review, but the analyst remains responsible for every conclusion.\nUse AI to:\n\nExplain unfamiliar R code.\nTranslate error messages into possible causes.\nDraft first-pass code for review.\nSuggest checks for assumptions.\nImprove comments, captions, and report language.\n\nDo not use AI to:\n\nReplace inspecting the data.\nInvent columns or assumptions.\nAccept code that has not been run.\nExplain results without checking outputs.\nMake actuarial judgements without human review.",
+    "crumbs": [
+      "AI Guidance",
+      "AI Use Guidelines"
+    ]
+  },
+  {
+    "objectID": "solutions/session03.html",
+    "href": "solutions/session03.html",
+    "title": "Session 3 Instructor Notes",
+    "section": "",
+    "text": "Ask participants what decision each chart supports. A technically correct chart is not enough; it should clarify a comparison, trend, distribution, or risk profile."
+  },
+  {
+    "objectID": "solutions/session03.html#teaching-notes",
+    "href": "solutions/session03.html#teaching-notes",
+    "title": "Session 3 Instructor Notes",
+    "section": "",
+    "text": "Ask participants what decision each chart supports. A technically correct chart is not enough; it should clarify a comparison, trend, distribution, or risk profile."
+  },
+  {
+    "objectID": "solutions/session03.html#review-checklist",
+    "href": "solutions/session03.html#review-checklist",
+    "title": "Session 3 Instructor Notes",
+    "section": "Review Checklist",
+    "text": "Review Checklist\n\nDoes the chart have a clear title?\nAre labels understandable to a non-technical audience?\nAre percentages and currency values formatted correctly?\nIs the conclusion supported by the plotted data?\nCould another actuary reproduce the figure?"
+  },
+  {
+    "objectID": "solutions/session01.html",
+    "href": "solutions/session01.html",
+    "title": "Session 1 Instructor Notes",
+    "section": "",
+    "text": "Emphasise that data checks are actuarial work, not administrative setup. Participants should learn to distrust imported data until keys, types, ranges, and totals have been checked."
+  },
+  {
+    "objectID": "solutions/session01.html#teaching-notes",
+    "href": "solutions/session01.html#teaching-notes",
+    "title": "Session 1 Instructor Notes",
+    "section": "",
+    "text": "Emphasise that data checks are actuarial work, not administrative setup. Participants should learn to distrust imported data until keys, types, ranges, and totals have been checked."
+  },
+  {
+    "objectID": "solutions/session01.html#expected-checks",
+    "href": "solutions/session01.html#expected-checks",
+    "title": "Session 1 Instructor Notes",
+    "section": "Expected Checks",
+    "text": "Expected Checks\n\npolicies |&gt; summarise(rows = n(), policies = n_distinct(policy_id))\nclaims |&gt; summarise(rows = n(), claims = n_distinct(claim_id))\n\nanti_join(claims, policies, by = \"policy_id\")"
+  },
+  {
+    "objectID": "exercises/session02.html",
+    "href": "exercises/session02.html",
+    "title": "Session 2 Exercises",
+    "section": "",
+    "text": "Join policies and claims.\nCreate an age band variable.\nCalculate claim count, claim amount, earned premium, and loss ratio by product.\nRepeat the summary by region.\nWrite one helper function for a repeated summary.\nDocument one assumption used in the analysis.",
+    "crumbs": [
+      "Exercises",
+      "Session 2"
+    ]
+  },
+  {
+    "objectID": "case-study/data_dictionary.html",
+    "href": "case-study/data_dictionary.html",
+    "title": "Data Dictionary",
+    "section": "",
+    "text": "Variable\nDescription\n\n\n\n\npolicy_id\nUnique policy identifier\n\n\npolicyholder_id\nUnique policyholder identifier\n\n\nproduct\nInsurance product\n\n\nregion\nPolicy region\n\n\ndriver_age\nDriver or insured age\n\n\nrisk_score\nSimplified underwriting risk score\n\n\nexposure\nEarned exposure for the policy year\n\n\nearned_premium\nEarned premium amount\n\n\npolicy_start\nPolicy start date",
+    "crumbs": [
+      "Case Study",
+      "Data Dictionary"
+    ]
+  },
+  {
+    "objectID": "case-study/data_dictionary.html#policies.csv",
+    "href": "case-study/data_dictionary.html#policies.csv",
+    "title": "Data Dictionary",
+    "section": "",
+    "text": "Variable\nDescription\n\n\n\n\npolicy_id\nUnique policy identifier\n\n\npolicyholder_id\nUnique policyholder identifier\n\n\nproduct\nInsurance product\n\n\nregion\nPolicy region\n\n\ndriver_age\nDriver or insured age\n\n\nrisk_score\nSimplified underwriting risk score\n\n\nexposure\nEarned exposure for the policy year\n\n\nearned_premium\nEarned premium amount\n\n\npolicy_start\nPolicy start date",
+    "crumbs": [
+      "Case Study",
+      "Data Dictionary"
+    ]
+  },
+  {
+    "objectID": "case-study/data_dictionary.html#claims.csv",
+    "href": "case-study/data_dictionary.html#claims.csv",
+    "title": "Data Dictionary",
+    "section": "claims.csv",
+    "text": "claims.csv\n\n\n\nVariable\nDescription\n\n\n\n\nclaim_id\nUnique claim identifier\n\n\npolicy_id\nPolicy identifier used for joining\n\n\nclaim_date\nClaim occurrence date\n\n\nclaim_type\nClaim category\n\n\nclaim_amount\nIncurred claim amount\n\n\nclosed\nWhether the claim is closed",
+    "crumbs": [
+      "Case Study",
+      "Data Dictionary"
+    ]
+  },
+  {
+    "objectID": "case-study/data_dictionary.html#known-teaching-features",
+    "href": "case-study/data_dictionary.html#known-teaching-features",
+    "title": "Data Dictionary",
+    "section": "Known Teaching Features",
+    "text": "Known Teaching Features\nThe sample data is intentionally small. It includes varied risk scores, regions, claim types, and one claim linked to a policy so participants can practice validation and joins without spending the session on data engineering.",
+    "crumbs": [
+      "Case Study",
+      "Data Dictionary"
+    ]
+  },
+  {
+    "objectID": "sessions/03-visualization.html",
+    "href": "sessions/03-visualization.html",
+    "title": "Session 3: Data Visualization and Reporting with Quarto",
+    "section": "",
+    "text": "Communicating actuarial results.\nThis session teaches the final part of the mini-project workflow: choosing clear charts, writing plain-language interpretation, rendering a Quarto report, and saving the processed dataset.",
+    "crumbs": [
+      "Sessions",
+      "3. Visualization and Reporting"
+    ]
+  },
+  {
+    "objectID": "sessions/03-visualization.html#theme",
+    "href": "sessions/03-visualization.html#theme",
+    "title": "Session 3: Data Visualization and Reporting with Quarto",
+    "section": "",
+    "text": "Communicating actuarial results.\nThis session teaches the final part of the mini-project workflow: choosing clear charts, writing plain-language interpretation, rendering a Quarto report, and saving the processed dataset.",
+    "crumbs": [
+      "Sessions",
+      "3. Visualization and Reporting"
+    ]
+  },
+  {
+    "objectID": "sessions/03-visualization.html#learning-outcomes",
+    "href": "sessions/03-visualization.html#learning-outcomes",
+    "title": "Session 3: Data Visualization and Reporting with Quarto",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nAt the end of this session, participants will be able to:\n\nProduce effective visualisations using ggplot2.\nSelect appropriate graphics for actuarial summaries and comparisons.\nIntegrate narrative, code, tables, and figures within Quarto.\nGenerate a reproducible HTML report.\nPresent actuarial findings clearly to both technical and non-technical audiences.\nPublish the completed project to GitHub.",
+    "crumbs": [
+      "Sessions",
+      "3. Visualization and Reporting"
+    ]
+  },
+  {
+    "objectID": "sessions/03-visualization.html#case-study-milestone",
+    "href": "sessions/03-visualization.html#case-study-milestone",
+    "title": "Session 3: Data Visualization and Reporting with Quarto",
+    "section": "Case Study Milestone",
+    "text": "Case Study Milestone\nParticipants reproduce Sections 5 and 6 of the mini-project:\n\nCreate reusable plots for product, claim type, and risk-band summaries.\nExplain what each chart shows.\nSave data/processed/portfolio_clean.csv.\nRender the final Quarto report.",
+    "crumbs": [
+      "Sessions",
+      "3. Visualization and Reporting"
+    ]
+  },
+  {
+    "objectID": "sessions/03-visualization.html#suggested-timing",
+    "href": "sessions/03-visualization.html#suggested-timing",
+    "title": "Session 3: Data Visualization and Reporting with Quarto",
+    "section": "Suggested Timing",
+    "text": "Suggested Timing\n\n\n\nTime\nActivity\n\n\n\n\n20 min\nChart choice for actuarial communication\n\n\n30 min\nDistribution, comparison, and risk profile charts\n\n\n25 min\nTables and narrative in Quarto\n\n\n25 min\nMini-project report completion\n\n\n15 min\nAI report review\n\n\n5 min\nWrap-up",
+    "crumbs": [
+      "Sessions",
+      "3. Visualization and Reporting"
+    ]
+  },
+  {
+    "objectID": "sessions/03-visualization.html#core-code-from-the-mini-project",
+    "href": "sessions/03-visualization.html#core-code-from-the-mini-project",
+    "title": "Session 3: Data Visualization and Reporting with Quarto",
+    "section": "Core Code From The Mini-Project",
+    "text": "Core Code From The Mini-Project\n\nlibrary(ggplot2)\nlibrary(scales)\n\nggplot(summary_by_product, aes(x = product, y = loss_ratio)) +\n  geom_col(fill = \"#C05621\") +\n  scale_y_continuous(labels = percent) +\n  labs(\n    title = \"Loss ratio by product\",\n    x = \"Product\",\n    y = \"Loss ratio\"\n  ) +\n  theme_minimal()\n\nwrite_csv(portfolio, \"data/processed/portfolio_clean.csv\")",
+    "crumbs": [
+      "Sessions",
+      "3. Visualization and Reporting"
+    ]
+  },
+  {
+    "objectID": "sessions/03-visualization.html#ai-checkpoint",
+    "href": "sessions/03-visualization.html#ai-checkpoint",
+    "title": "Session 3: Data Visualization and Reporting with Quarto",
+    "section": "AI Checkpoint",
+    "text": "AI Checkpoint\nUse AI to review the report for clarity, chart choice, and possible unsupported conclusions. Keep only suggestions that are supported by the actual data and analysis.",
+    "crumbs": [
+      "Sessions",
+      "3. Visualization and Reporting"
+    ]
+  },
+  {
+    "objectID": "sessions/01-introduction.html",
+    "href": "sessions/01-introduction.html",
+    "title": "Session 1: Introduction to R for Actuaries",
+    "section": "",
+    "text": "From raw actuarial data to a clean dataset.\nThis session teaches the first part of the mini-project workflow: importing policy and claims data, inspecting structure, and performing basic validation checks.",
+    "crumbs": [
+      "Sessions",
+      "1. Introduction to R"
+    ]
+  },
+  {
+    "objectID": "sessions/01-introduction.html#theme",
+    "href": "sessions/01-introduction.html#theme",
+    "title": "Session 1: Introduction to R for Actuaries",
+    "section": "",
+    "text": "From raw actuarial data to a clean dataset.\nThis session teaches the first part of the mini-project workflow: importing policy and claims data, inspecting structure, and performing basic validation checks.",
+    "crumbs": [
+      "Sessions",
+      "1. Introduction to R"
+    ]
+  },
+  {
+    "objectID": "sessions/01-introduction.html#learning-outcomes",
+    "href": "sessions/01-introduction.html#learning-outcomes",
+    "title": "Session 1: Introduction to R for Actuaries",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nAt the end of this session, participants will be able to:\n\nNavigate the RStudio environment and organise an R Project.\nImport actuarial datasets into R.\nUnderstand the main R data structures used in actuarial analysis.\nManipulate and validate policy and claims data using dplyr.\nPerform common data quality checks, including missing values, duplicates, data types, and consistency checks.\nProduce the first reproducible Quarto notebook for the case study.",
+    "crumbs": [
+      "Sessions",
+      "1. Introduction to R"
+    ]
+  },
+  {
+    "objectID": "sessions/01-introduction.html#case-study-milestone",
+    "href": "sessions/01-introduction.html#case-study-milestone",
+    "title": "Session 1: Introduction to R for Actuaries",
+    "section": "Case Study Milestone",
+    "text": "Case Study Milestone\nParticipants reproduce Sections 1 and 2 of the mini-project:\n\nRead data/raw/policies.csv.\nRead data/raw/claims.csv.\nConvert date columns.\nCheck row counts, missing values, duplicates, policy IDs, claim dates, and numeric ranges.\nDocument what they found.",
+    "crumbs": [
+      "Sessions",
+      "1. Introduction to R"
+    ]
+  },
+  {
+    "objectID": "sessions/01-introduction.html#suggested-timing",
+    "href": "sessions/01-introduction.html#suggested-timing",
+    "title": "Session 1: Introduction to R for Actuaries",
+    "section": "Suggested Timing",
+    "text": "Suggested Timing\n\n\n\nTime\nActivity\n\n\n\n\n15 min\nRStudio, projects, files, and Quarto orientation\n\n\n25 min\nImporting policies and claims data\n\n\n35 min\nData structures and dplyr basics\n\n\n25 min\nData quality checks from the mini-project\n\n\n15 min\nAI checkpoint and reflection\n\n\n5 min\nWrap-up",
+    "crumbs": [
+      "Sessions",
+      "1. Introduction to R"
+    ]
+  },
+  {
+    "objectID": "sessions/01-introduction.html#core-code-from-the-mini-project",
+    "href": "sessions/01-introduction.html#core-code-from-the-mini-project",
+    "title": "Session 1: Introduction to R for Actuaries",
+    "section": "Core Code From The Mini-Project",
+    "text": "Core Code From The Mini-Project\n\n# Load packages.\nlibrary(dplyr)\nlibrary(readr)\n\n# Read the raw files.\npolicies &lt;- read_csv(\"data/raw/policies.csv\", show_col_types = FALSE)\nclaims &lt;- read_csv(\"data/raw/claims.csv\", show_col_types = FALSE)\n\n# Convert text dates into real Date objects.\npolicies &lt;- policies |&gt;\n  mutate(policy_start = as.Date(policy_start))\n\nclaims &lt;- claims |&gt;\n  mutate(claim_date = as.Date(claim_date))\n\n# Inspect the data.\nglimpse(policies)\nglimpse(claims)\n\n# Find claims that do not match a known policy.\nunmatched_claims &lt;- claims |&gt;\n  anti_join(policies, by = \"policy_id\")",
+    "crumbs": [
+      "Sessions",
+      "1. Introduction to R"
+    ]
+  },
+  {
+    "objectID": "sessions/01-introduction.html#ai-checkpoint",
+    "href": "sessions/01-introduction.html#ai-checkpoint",
+    "title": "Session 1: Introduction to R for Actuaries",
+    "section": "AI Checkpoint",
+    "text": "AI Checkpoint\n\nAttempt the validation check independently.\nAsk AI to explain one unfamiliar line of code.\nAsk AI what assumptions the check makes.\nRun the code yourself and inspect the output.\nRewrite the result in your own words.",
+    "crumbs": [
+      "Sessions",
+      "1. Introduction to R"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R for Actuaries 2026",
+    "section": "",
+    "text": "This repository contains the teaching materials for the 2026 cohort of R for Actuaries.\nPublished course website: https://fgazzelloni.github.io/r-for-actuaries-2026/\nThis three-session course introduces R through a realistic actuarial workflow. Participants work on one mini-project that starts with raw policy and claims data and ends with a reproducible Quarto report.\nThe course is designed around a professional principle:\n\nWrite code that another actuary can understand, reproduce, and trust.",
+    "crumbs": [
+      "Course Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#course-overview",
+    "href": "index.html#course-overview",
+    "title": "R for Actuaries 2026",
+    "section": "",
+    "text": "This repository contains the teaching materials for the 2026 cohort of R for Actuaries.\nPublished course website: https://fgazzelloni.github.io/r-for-actuaries-2026/\nThis three-session course introduces R through a realistic actuarial workflow. Participants work on one mini-project that starts with raw policy and claims data and ends with a reproducible Quarto report.\nThe course is designed around a professional principle:\n\nWrite code that another actuary can understand, reproduce, and trust.",
+    "crumbs": [
+      "Course Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "R for Actuaries 2026",
+    "section": "Instructor",
+    "text": "Instructor\nFederica Gazzelloni is an actuary, statistician, data scientist, author, and educator with expertise in actuarial modelling, health metrics, statistical computing, and reproducible research. She is the author of Health Metrics and the Spread of Infectious Diseases (CRC Press) and CP2 Modelling Practice and Communication (ACTEX Learning), and has extensive experience developing educational material for actuarial and data science audiences.\nA Certified Carpentries Instructor and Lead Organizer of Rome R Users Group, Federica designs and delivers training on R, Quarto, data visualization, reproducible workflows, and AI-assisted data analysis. Her work combines actuarial science with modern open-source tools to promote transparent, reproducible, and collaborative analytical practices.\nHer research and teaching focus on actuarial modelling, health data analytics, statistical methods, and the effective communication of analytical results, helping professionals build practical skills that can be applied to real-world actuarial and data science problems.\n\nWebsite: federicagazzelloni.com\nLinkedIn: federicagazzelloni",
+    "crumbs": [
+      "Course Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#course-thread",
+    "href": "index.html#course-thread",
+    "title": "R for Actuaries 2026",
+    "section": "Course Thread",
+    "text": "Course Thread\nClaims and policy data\n  -&gt; data validation and preparation\n  -&gt; reproducible actuarial analysis\n  -&gt; data visualization\n  -&gt; Quarto report\n  -&gt; GitHub publication",
+    "crumbs": [
+      "Course Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#sessions",
+    "href": "index.html#sessions",
+    "title": "R for Actuaries 2026",
+    "section": "Sessions",
+    "text": "Sessions\n\nIntroduction to R for Actuaries: import data, inspect structure, and perform data checks.\nReproducible Actuarial Analysis with R: create derived measures, summaries, and simple analysis outputs.\nData Visualization and Reporting with Quarto: communicate findings with charts, tables, and a concise report.",
+    "crumbs": [
+      "Course Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#expected-participant-profile",
+    "href": "index.html#expected-participant-profile",
+    "title": "R for Actuaries 2026",
+    "section": "Expected Participant Profile",
+    "text": "Expected Participant Profile\n\n\n\nBackground\nAssumed knowledge\n\n\n\n\nActuarial students\nBasic actuarial concepts\n\n\nQualified actuaries\nNo prior R experience required\n\n\nData analysts\nBasic spreadsheet skills\n\n\nProgrammers\nNo prior knowledge of actuarial applications required",
+    "crumbs": [
+      "Course Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#software-requirements",
+    "href": "index.html#software-requirements",
+    "title": "R for Actuaries 2026",
+    "section": "Software Requirements",
+    "text": "Software Requirements\nParticipants should install R, RStudio, Git, Quarto, and create a GitHub account before the first session.\nRecommended R packages:\ninstall.packages(c(\n  \"tidyverse\", \"janitor\", \"skimr\", \"ggplot2\",\n  \"readr\", \"quarto\", \"gt\", \"patchwork\"\n))",
+    "crumbs": [
+      "Course Overview"
+    ]
+  },
+  {
+    "objectID": "sessions/02-analysis.html",
+    "href": "sessions/02-analysis.html",
+    "title": "Session 2: Reproducible Actuarial Analysis with R",
+    "section": "",
+    "text": "Turning validated data into actuarial insight.\nThis session teaches the middle of the mini-project workflow: joining valid claims to policies, creating derived actuarial measures, and producing summaries that another actuary can check.",
+    "crumbs": [
+      "Sessions",
+      "2. Actuarial Analysis"
+    ]
+  },
+  {
+    "objectID": "sessions/02-analysis.html#theme",
+    "href": "sessions/02-analysis.html#theme",
+    "title": "Session 2: Reproducible Actuarial Analysis with R",
+    "section": "",
+    "text": "Turning validated data into actuarial insight.\nThis session teaches the middle of the mini-project workflow: joining valid claims to policies, creating derived actuarial measures, and producing summaries that another actuary can check.",
+    "crumbs": [
+      "Sessions",
+      "2. Actuarial Analysis"
+    ]
+  },
+  {
+    "objectID": "sessions/02-analysis.html#learning-outcomes",
+    "href": "sessions/02-analysis.html#learning-outcomes",
+    "title": "Session 2: Reproducible Actuarial Analysis with R",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nAt the end of this session, participants will be able to:\n\nBuild a reproducible actuarial workflow in R.\nCreate derived variables and actuarial summary measures.\nWrite reusable functions for repetitive tasks.\nPerform grouped summaries and simple statistical analyses.\nOrganise code for readability, reuse, and reproducibility.\nDocument assumptions and intermediate results within a Quarto notebook.",
+    "crumbs": [
+      "Sessions",
+      "2. Actuarial Analysis"
+    ]
+  },
+  {
+    "objectID": "sessions/02-analysis.html#case-study-milestone",
+    "href": "sessions/02-analysis.html#case-study-milestone",
+    "title": "Session 2: Reproducible Actuarial Analysis with R",
+    "section": "Case Study Milestone",
+    "text": "Case Study Milestone\nParticipants reproduce Sections 3 and 4 of the mini-project:\n\nExclude unmatched claims from portfolio metrics after documenting them.\nSummarise claims at policy level.\nJoin claim totals to policy records.\nCreate age bands and risk bands.\nCalculate claim frequency, average severity, pure premium, and loss ratio.\nSummarise results by product, region, age band, and risk band.",
+    "crumbs": [
+      "Sessions",
+      "2. Actuarial Analysis"
+    ]
+  },
+  {
+    "objectID": "sessions/02-analysis.html#suggested-timing",
+    "href": "sessions/02-analysis.html#suggested-timing",
+    "title": "Session 2: Reproducible Actuarial Analysis with R",
+    "section": "Suggested Timing",
+    "text": "Suggested Timing\n\n\n\nTime\nActivity\n\n\n\n\n15 min\nReview data checks from Session 1\n\n\n30 min\nJoin policy and claims data\n\n\n30 min\nCreate derived actuarial measures\n\n\n25 min\nSummarise by segment and risk profile\n\n\n15 min\nAI-assisted code review\n\n\n5 min\nWrap-up",
+    "crumbs": [
+      "Sessions",
+      "2. Actuarial Analysis"
+    ]
+  },
+  {
+    "objectID": "sessions/02-analysis.html#core-code-from-the-mini-project",
+    "href": "sessions/02-analysis.html#core-code-from-the-mini-project",
+    "title": "Session 2: Reproducible Actuarial Analysis with R",
+    "section": "Core Code From The Mini-Project",
+    "text": "Core Code From The Mini-Project\n\n# Keep only claims linked to known policies.\nvalid_claims &lt;- claims |&gt;\n  semi_join(policies, by = \"policy_id\")\n\n# Summarise claims by policy before joining.\nclaims_by_policy &lt;- valid_claims |&gt;\n  group_by(policy_id) |&gt;\n  summarise(\n    claim_count = n(),\n    claim_amount = sum(claim_amount, na.rm = TRUE),\n    .groups = \"drop\"\n  )\n\n# Join policies to their claim totals.\nportfolio &lt;- policies |&gt;\n  left_join(claims_by_policy, by = \"policy_id\") |&gt;\n  mutate(\n    claim_count = if_else(is.na(claim_count), 0L, claim_count),\n    claim_amount = if_else(is.na(claim_amount), 0, claim_amount),\n    claim_frequency = claim_count / exposure,\n    average_severity = if_else(claim_count &gt; 0, claim_amount / claim_count, 0),\n    pure_premium = claim_amount / exposure,\n    loss_ratio = claim_amount / earned_premium\n  )",
+    "crumbs": [
+      "Sessions",
+      "2. Actuarial Analysis"
+    ]
+  },
+  {
+    "objectID": "sessions/02-analysis.html#ai-checkpoint",
+    "href": "sessions/02-analysis.html#ai-checkpoint",
+    "title": "Session 2: Reproducible Actuarial Analysis with R",
+    "section": "AI Checkpoint",
+    "text": "AI Checkpoint\nUse AI to review the code structure and identify possible errors. Then verify the output yourself by checking row counts, totals, and whether policies with no claims are handled correctly.",
+    "crumbs": [
+      "Sessions",
+      "2. Actuarial Analysis"
+    ]
+  },
+  {
+    "objectID": "case-study/actuarial-mini-project.html",
+    "href": "case-study/actuarial-mini-project.html",
+    "title": "Actuarial Mini-Project",
+    "section": "",
+    "text": "Build a reproducible actuarial analysis from simplified policy and claims data. This notebook is the source of truth for the course: each teaching session unpacks one part of this workflow.\nThe professional goal is simple:\n\nWrite code that another actuary can understand, reproduce, and trust.",
+    "crumbs": [
+      "Case Study",
+      "Mini Project"
+    ]
+  },
+  {
+    "objectID": "case-study/actuarial-mini-project.html#objective",
+    "href": "case-study/actuarial-mini-project.html#objective",
+    "title": "Actuarial Mini-Project",
+    "section": "",
+    "text": "Build a reproducible actuarial analysis from simplified policy and claims data. This notebook is the source of truth for the course: each teaching session unpacks one part of this workflow.\nThe professional goal is simple:\n\nWrite code that another actuary can understand, reproduce, and trust.",
+    "crumbs": [
+      "Case Study",
+      "Mini Project"
+    ]
+  },
+  {
+    "objectID": "case-study/actuarial-mini-project.html#workflow",
+    "href": "case-study/actuarial-mini-project.html#workflow",
+    "title": "Actuarial Mini-Project",
+    "section": "Workflow",
+    "text": "Workflow\n\nImport policies.csv and claims.csv.\nValidate row counts, missing values, duplicates, keys, dates, and numeric ranges.\nJoin policy and claim records.\nCreate derived actuarial measures: claim frequency, average severity, pure premium, and loss ratio.\nSummarise results by product, region, age band, and risk score band.\nCreate charts for communication.\nSave the clean processed dataset.\n\n\n# These packages are enough for the whole mini-project.\n# dplyr: data manipulation\n# readr: reading and writing CSV files\n# ggplot2: charts\n# scales: axis labels such as percentages and currency\n# knitr: simple tables in the rendered report\nlibrary(dplyr)\nlibrary(readr)\nlibrary(ggplot2)\nlibrary(scales)\nlibrary(knitr)",
+    "crumbs": [
+      "Case Study",
+      "Mini Project"
+    ]
+  },
+  {
+    "objectID": "case-study/actuarial-mini-project.html#import-the-data",
+    "href": "case-study/actuarial-mini-project.html#import-the-data",
+    "title": "Actuarial Mini-Project",
+    "section": "1. Import The Data",
+    "text": "1. Import The Data\nWe start by reading the raw data. Keeping raw data in data/raw/ makes the analysis easier to reproduce because the original inputs are separated from any processed outputs.\n\npolicies &lt;- read_csv(\"../data/raw/policies.csv\", show_col_types = FALSE)\nclaims &lt;- read_csv(\"../data/raw/claims.csv\", show_col_types = FALSE)\n\n# Convert date columns from text to Date objects.\n# This lets R compare dates correctly later.\npolicies &lt;- policies |&gt;\n  mutate(policy_start = as.Date(policy_start))\n\nclaims &lt;- claims |&gt;\n  mutate(claim_date = as.Date(claim_date))\n\nglimpse(policies)\n\nRows: 12\nColumns: 9\n$ policy_id       &lt;chr&gt; \"P0001\", \"P0002\", \"P0003\", \"P0004\", \"P0005\", \"P0006\", …\n$ policyholder_id &lt;chr&gt; \"H001\", \"H002\", \"H003\", \"H004\", \"H005\", \"H006\", \"H007\"…\n$ product         &lt;chr&gt; \"Motor\", \"Motor\", \"Home\", \"Motor\", \"Travel\", \"Home\", \"…\n$ region          &lt;chr&gt; \"North\", \"South\", \"North\", \"West\", \"East\", \"South\", \"E…\n$ driver_age      &lt;dbl&gt; 24, 41, 55, 32, 29, 67, 21, 48, 36, 62, 44, 39\n$ risk_score      &lt;dbl&gt; 0.72, 0.38, 0.31, 0.64, 0.44, 0.58, 0.81, 0.27, 0.52, …\n$ exposure        &lt;dbl&gt; 1.00, 1.00, 1.00, 0.75, 0.50, 1.00, 1.00, 1.00, 0.80, …\n$ earned_premium  &lt;dbl&gt; 820, 610, 540, 690, 180, 760, 980, 500, 700, 240, 640,…\n$ policy_start    &lt;date&gt; 2025-01-01, 2025-01-15, 2025-02-01, 2025-03-01, 2025-0…\n\nglimpse(claims)\n\nRows: 8\nColumns: 6\n$ claim_id     &lt;chr&gt; \"C0001\", \"C0002\", \"C0003\", \"C0004\", \"C0005\", \"C0006\", \"C0…\n$ policy_id    &lt;chr&gt; \"P0001\", \"P0002\", \"P0004\", \"P0006\", \"P0007\", \"P0009\", \"P0…\n$ claim_date   &lt;date&gt; 2025-02-14, 2025-04-02, 2025-05-20, 2025-06-11, 2025-07-…\n$ claim_type   &lt;chr&gt; \"Collision\", \"Theft\", \"Collision\", \"Property\", \"Collision…\n$ claim_amount &lt;dbl&gt; 1250, 900, 2200, 1750, 3100, 420, 4800, 700\n$ closed       &lt;lgl&gt; TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE",
+    "crumbs": [
+      "Case Study",
+      "Mini Project"
+    ]
+  },
+  {
+    "objectID": "case-study/actuarial-mini-project.html#validate-the-data",
+    "href": "case-study/actuarial-mini-project.html#validate-the-data",
+    "title": "Actuarial Mini-Project",
+    "section": "2. Validate The Data",
+    "text": "2. Validate The Data\nData validation is actuarial work. Before calculating any metrics, we check whether the data is complete, consistent, and suitable for analysis.\n\nRow Counts\n\nrow_counts &lt;- tibble(\n  dataset = c(\"policies\", \"claims\"),\n  rows = c(nrow(policies), nrow(claims)),\n  columns = c(ncol(policies), ncol(claims))\n)\n\nkable(row_counts)\n\n\n\n\ndataset\nrows\ncolumns\n\n\n\n\npolicies\n12\n9\n\n\nclaims\n8\n6\n\n\n\n\n\n\n\nMissing Values\n\n# Count missing values in every column of a data frame.\ncount_missing &lt;- function(data, dataset_name) {\n  data |&gt;\n    summarise(across(everything(), ~ sum(is.na(.x)))) |&gt;\n    tidyr::pivot_longer(\n      cols = everything(),\n      names_to = \"column\",\n      values_to = \"missing_values\"\n    ) |&gt;\n    mutate(dataset = dataset_name, .before = column)\n}\n\nmissing_summary &lt;- bind_rows(\n  count_missing(policies, \"policies\"),\n  count_missing(claims, \"claims\")\n)\n\nkable(missing_summary)\n\n\n\n\ndataset\ncolumn\nmissing_values\n\n\n\n\npolicies\npolicy_id\n0\n\n\npolicies\npolicyholder_id\n0\n\n\npolicies\nproduct\n0\n\n\npolicies\nregion\n0\n\n\npolicies\ndriver_age\n0\n\n\npolicies\nrisk_score\n0\n\n\npolicies\nexposure\n0\n\n\npolicies\nearned_premium\n0\n\n\npolicies\npolicy_start\n0\n\n\nclaims\nclaim_id\n0\n\n\nclaims\npolicy_id\n0\n\n\nclaims\nclaim_date\n0\n\n\nclaims\nclaim_type\n0\n\n\nclaims\nclaim_amount\n0\n\n\nclaims\nclosed\n0\n\n\n\n\n\n\n\nDuplicate Identifiers\n\nduplicate_checks &lt;- tibble(\n  check = c(\"Duplicate policy_id in policies\", \"Duplicate claim_id in claims\"),\n  duplicates = c(\n    sum(duplicated(policies$policy_id)),\n    sum(duplicated(claims$claim_id))\n  )\n)\n\nkable(duplicate_checks)\n\n\n\n\ncheck\nduplicates\n\n\n\n\nDuplicate policy_id in policies\n0\n\n\nDuplicate claim_id in claims\n0\n\n\n\n\n\n\n\nPolicy ID Checks\nEvery claim should connect to a policy. This check finds claims with a policy_id that does not appear in the policy file.\n\nunmatched_claims &lt;- claims |&gt;\n  anti_join(policies, by = \"policy_id\")\n\nkable(unmatched_claims)\n\n\n\n\nclaim_id\npolicy_id\nclaim_date\nclaim_type\nclaim_amount\nclosed\n\n\n\n\nC0008\nP0999\n2025-09-22\nCollision\n700\nTRUE\n\n\n\n\n\nThe sample data intentionally includes one unmatched claim so participants can practice finding key problems.\n\n\nClaim Dates Versus Policy Dates\nA claim date before the policy start date should be investigated. This check only applies to claims that successfully match a policy.\n\nclaim_date_checks &lt;- claims |&gt;\n  inner_join(policies |&gt; select(policy_id, policy_start), by = \"policy_id\") |&gt;\n  mutate(claim_before_policy_start = claim_date &lt; policy_start)\n\nclaims_before_policy_start &lt;- claim_date_checks |&gt;\n  filter(claim_before_policy_start)\n\nkable(claims_before_policy_start)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nclaim_id\npolicy_id\nclaim_date\nclaim_type\nclaim_amount\nclosed\npolicy_start\nclaim_before_policy_start\n\n\n\n\n\n\n\n\n\nNumeric Range Checks\nThese checks are deliberately simple. They are here to teach the habit of asking whether values are plausible before using them.\n\nrange_checks &lt;- tibble(\n  check = c(\n    \"Driver age outside 16 to 100\",\n    \"Risk score outside 0 to 1\",\n    \"Exposure less than or equal to 0\",\n    \"Earned premium less than 0\",\n    \"Claim amount less than 0\"\n  ),\n  flagged_rows = c(\n    sum(policies$driver_age &lt; 16 | policies$driver_age &gt; 100, na.rm = TRUE),\n    sum(policies$risk_score &lt; 0 | policies$risk_score &gt; 1, na.rm = TRUE),\n    sum(policies$exposure &lt;= 0, na.rm = TRUE),\n    sum(policies$earned_premium &lt; 0, na.rm = TRUE),\n    sum(claims$claim_amount &lt; 0, na.rm = TRUE)\n  )\n)\n\nkable(range_checks)\n\n\n\n\ncheck\nflagged_rows\n\n\n\n\nDriver age outside 16 to 100\n0\n\n\nRisk score outside 0 to 1\n0\n\n\nExposure less than or equal to 0\n0\n\n\nEarned premium less than 0\n0\n\n\nClaim amount less than 0\n0",
+    "crumbs": [
+      "Case Study",
+      "Mini Project"
+    ]
+  },
+  {
+    "objectID": "case-study/actuarial-mini-project.html#create-a-joined-portfolio-dataset",
+    "href": "case-study/actuarial-mini-project.html#create-a-joined-portfolio-dataset",
+    "title": "Actuarial Mini-Project",
+    "section": "3. Create A Joined Portfolio Dataset",
+    "text": "3. Create A Joined Portfolio Dataset\nFor most summaries, we want one row per policy. We first summarise valid claims by policy, then join those claim totals back to the policy data.\n\n# Keep only claims that match a known policy.\n# The unmatched claim remains documented above, but is excluded from portfolio metrics.\nvalid_claims &lt;- claims |&gt;\n  semi_join(policies, by = \"policy_id\")\n\nclaims_by_policy &lt;- valid_claims |&gt;\n  group_by(policy_id) |&gt;\n  summarise(\n    claim_count = n(),\n    claim_amount = sum(claim_amount, na.rm = TRUE),\n    first_claim_date = min(claim_date),\n    has_open_claim = any(!closed),\n    .groups = \"drop\"\n  )\n\nportfolio &lt;- policies |&gt;\n  left_join(claims_by_policy, by = \"policy_id\") |&gt;\n  mutate(\n    # Policies with no claims should have zero claim count and zero claim amount.\n    claim_count = if_else(is.na(claim_count), 0L, claim_count),\n    claim_amount = if_else(is.na(claim_amount), 0, claim_amount),\n    has_open_claim = if_else(is.na(has_open_claim), FALSE, has_open_claim)\n  )\n\nkable(portfolio)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\npolicy_id\npolicyholder_id\nproduct\nregion\ndriver_age\nrisk_score\nexposure\nearned_premium\npolicy_start\nclaim_count\nclaim_amount\nfirst_claim_date\nhas_open_claim\n\n\n\n\nP0001\nH001\nMotor\nNorth\n24\n0.72\n1.00\n820\n2025-01-01\n1\n1250\n2025-02-14\nFALSE\n\n\nP0002\nH002\nMotor\nSouth\n41\n0.38\n1.00\n610\n2025-01-15\n1\n900\n2025-04-02\nFALSE\n\n\nP0003\nH003\nHome\nNorth\n55\n0.31\n1.00\n540\n2025-02-01\n0\n0\nNA\nFALSE\n\n\nP0004\nH004\nMotor\nWest\n32\n0.64\n0.75\n690\n2025-03-01\n1\n2200\n2025-05-20\nTRUE\n\n\nP0005\nH005\nTravel\nEast\n29\n0.44\n0.50\n180\n2025-03-15\n0\n0\nNA\nFALSE\n\n\nP0006\nH006\nHome\nSouth\n67\n0.58\n1.00\n760\n2025-04-01\n1\n1750\n2025-06-11\nFALSE\n\n\nP0007\nH007\nMotor\nEast\n21\n0.81\n1.00\n980\n2025-04-10\n1\n3100\n2025-07-09\nTRUE\n\n\nP0008\nH008\nHome\nWest\n48\n0.27\n1.00\n500\n2025-05-01\n0\n0\nNA\nFALSE\n\n\nP0009\nH009\nMotor\nNorth\n36\n0.52\n0.80\n700\n2025-05-15\n1\n420\n2025-08-18\nFALSE\n\n\nP0010\nH010\nTravel\nSouth\n62\n0.69\n0.25\n240\n2025-06-01\n0\n0\nNA\nFALSE\n\n\nP0011\nH011\nMotor\nWest\n44\n0.46\n1.00\n640\n2025-06-10\n1\n4800\n2025-09-03\nTRUE\n\n\nP0012\nH012\nHome\nEast\n39\n0.35\n1.00\n560\n2025-07-01\n0\n0\nNA\nFALSE",
+    "crumbs": [
+      "Case Study",
+      "Mini Project"
+    ]
+  },
+  {
+    "objectID": "case-study/actuarial-mini-project.html#add-derived-actuarial-measures",
+    "href": "case-study/actuarial-mini-project.html#add-derived-actuarial-measures",
+    "title": "Actuarial Mini-Project",
+    "section": "4. Add Derived Actuarial Measures",
+    "text": "4. Add Derived Actuarial Measures\nThese measures are simplified for teaching. They introduce the core ideas without turning the workshop into an advanced pricing course.\n\nportfolio &lt;- portfolio |&gt;\n  mutate(\n    age_band = cut(\n      driver_age,\n      breaks = c(0, 25, 40, 60, Inf),\n      labels = c(\"Under 25\", \"25-40\", \"41-60\", \"61+\"),\n      right = FALSE\n    ),\n    risk_band = case_when(\n      risk_score &lt; 0.40 ~ \"Low\",\n      risk_score &lt; 0.65 ~ \"Medium\",\n      TRUE ~ \"High\"\n    ),\n    claim_frequency = claim_count / exposure,\n    average_severity = if_else(claim_count &gt; 0, claim_amount / claim_count, 0),\n    pure_premium = claim_amount / exposure,\n    loss_ratio = claim_amount / earned_premium\n  )\n\nkable(\n  portfolio |&gt;\n    select(\n      policy_id, product, region, exposure, earned_premium,\n      claim_count, claim_amount, claim_frequency,\n      average_severity, pure_premium, loss_ratio\n    )\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\npolicy_id\nproduct\nregion\nexposure\nearned_premium\nclaim_count\nclaim_amount\nclaim_frequency\naverage_severity\npure_premium\nloss_ratio\n\n\n\n\nP0001\nMotor\nNorth\n1.00\n820\n1\n1250\n1.000000\n1250\n1250.000\n1.524390\n\n\nP0002\nMotor\nSouth\n1.00\n610\n1\n900\n1.000000\n900\n900.000\n1.475410\n\n\nP0003\nHome\nNorth\n1.00\n540\n0\n0\n0.000000\n0\n0.000\n0.000000\n\n\nP0004\nMotor\nWest\n0.75\n690\n1\n2200\n1.333333\n2200\n2933.333\n3.188406\n\n\nP0005\nTravel\nEast\n0.50\n180\n0\n0\n0.000000\n0\n0.000\n0.000000\n\n\nP0006\nHome\nSouth\n1.00\n760\n1\n1750\n1.000000\n1750\n1750.000\n2.302632\n\n\nP0007\nMotor\nEast\n1.00\n980\n1\n3100\n1.000000\n3100\n3100.000\n3.163265\n\n\nP0008\nHome\nWest\n1.00\n500\n0\n0\n0.000000\n0\n0.000\n0.000000\n\n\nP0009\nMotor\nNorth\n0.80\n700\n1\n420\n1.250000\n420\n525.000\n0.600000\n\n\nP0010\nTravel\nSouth\n0.25\n240\n0\n0\n0.000000\n0\n0.000\n0.000000\n\n\nP0011\nMotor\nWest\n1.00\n640\n1\n4800\n1.000000\n4800\n4800.000\n7.500000\n\n\nP0012\nHome\nEast\n1.00\n560\n0\n0\n0.000000\n0\n0.000\n0.000000\n\n\n\n\n\n\nPortfolio-Level Metrics\n\nportfolio_metrics &lt;- portfolio |&gt;\n  summarise(\n    policies = n(),\n    total_exposure = sum(exposure),\n    total_earned_premium = sum(earned_premium),\n    total_claim_count = sum(claim_count),\n    total_claim_amount = sum(claim_amount),\n    claim_frequency = total_claim_count / total_exposure,\n    average_severity = total_claim_amount / total_claim_count,\n    pure_premium = total_claim_amount / total_exposure,\n    loss_ratio = total_claim_amount / total_earned_premium\n  )\n\nkable(portfolio_metrics)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\npolicies\ntotal_exposure\ntotal_earned_premium\ntotal_claim_count\ntotal_claim_amount\nclaim_frequency\naverage_severity\npure_premium\nloss_ratio\n\n\n\n\n12\n10.3\n7220\n7\n14420\n0.6796117\n2060\n1400\n1.99723\n\n\n\n\n\n\n\nSegment Summaries\n\n# A small reusable function keeps repeated summaries consistent.\nsummarise_segment &lt;- function(data, group_variable) {\n  data |&gt;\n    group_by({{ group_variable }}) |&gt;\n    summarise(\n      policies = n(),\n      exposure = sum(exposure),\n      earned_premium = sum(earned_premium),\n      claim_count = sum(claim_count),\n      claim_amount = sum(claim_amount),\n      claim_frequency = claim_count / exposure,\n      average_severity = if_else(claim_count &gt; 0, claim_amount / claim_count, 0),\n      pure_premium = claim_amount / exposure,\n      loss_ratio = claim_amount / earned_premium,\n      .groups = \"drop\"\n    )\n}\n\nsummary_by_product &lt;- summarise_segment(portfolio, product)\nsummary_by_region &lt;- summarise_segment(portfolio, region)\nsummary_by_age &lt;- summarise_segment(portfolio, age_band)\nsummary_by_risk &lt;- summarise_segment(portfolio, risk_band)\n\nkable(summary_by_product)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nproduct\npolicies\nexposure\nearned_premium\nclaim_count\nclaim_amount\nclaim_frequency\naverage_severity\npure_premium\nloss_ratio\n\n\n\n\nHome\n4\n4.00\n2360\n1\n1750\n0.250000\n1750.000\n437.500\n0.7415254\n\n\nMotor\n6\n5.55\n4440\n6\n12670\n1.081081\n2111.667\n2282.883\n2.8536036\n\n\nTravel\n2\n0.75\n420\n0\n0\n0.000000\n0.000\n0.000\n0.0000000",
+    "crumbs": [
+      "Case Study",
+      "Mini Project"
+    ]
+  },
+  {
+    "objectID": "case-study/actuarial-mini-project.html#communicate-results-with-reusable-plots",
+    "href": "case-study/actuarial-mini-project.html#communicate-results-with-reusable-plots",
+    "title": "Actuarial Mini-Project",
+    "section": "5. Communicate Results With Reusable Plots",
+    "text": "5. Communicate Results With Reusable Plots\nThese plots become the starting point for Session 3. They are intentionally simple: each chart should answer one actuarial question.\n\ntheme_actex &lt;- function() {\n  theme_minimal(base_size = 12) +\n    theme(\n      plot.title.position = \"plot\",\n      panel.grid.minor = element_blank(),\n      legend.position = \"bottom\"\n    )\n}\n\n\nPlot 1: Earned Premium By Product\n\nggplot(summary_by_product, aes(x = product, y = earned_premium)) +\n  geom_col(fill = \"#2B6CB0\") +\n  scale_y_continuous(labels = dollar) +\n  labs(\n    title = \"Earned premium by product\",\n    x = \"Product\",\n    y = \"Earned premium\"\n  ) +\n  theme_actex()\n\n\n\n\n\n\n\n\n\n\nPlot 2: Loss Ratio By Product\n\nggplot(summary_by_product, aes(x = product, y = loss_ratio)) +\n  geom_col(fill = \"#C05621\") +\n  scale_y_continuous(labels = percent) +\n  labs(\n    title = \"Loss ratio by product\",\n    x = \"Product\",\n    y = \"Loss ratio\"\n  ) +\n  theme_actex()\n\n\n\n\n\n\n\n\n\n\nPlot 3: Claim Amount By Claim Type\n\nvalid_claims |&gt;\n  group_by(claim_type) |&gt;\n  summarise(claim_amount = sum(claim_amount), .groups = \"drop\") |&gt;\n  ggplot(aes(x = reorder(claim_type, claim_amount), y = claim_amount)) +\n  geom_col(fill = \"#2F855A\") +\n  coord_flip() +\n  scale_y_continuous(labels = dollar) +\n  labs(\n    title = \"Claim amount by claim type\",\n    x = \"Claim type\",\n    y = \"Claim amount\"\n  ) +\n  theme_actex()\n\n\n\n\n\n\n\n\n\n\nPlot 4: Claim Frequency By Risk Band\n\nggplot(summary_by_risk, aes(x = risk_band, y = claim_frequency)) +\n  geom_col(fill = \"#6B46C1\") +\n  scale_y_continuous(labels = number_format(accuracy = 0.01)) +\n  labs(\n    title = \"Claim frequency by risk band\",\n    x = \"Risk band\",\n    y = \"Claims per exposure\"\n  ) +\n  theme_actex()",
+    "crumbs": [
+      "Case Study",
+      "Mini Project"
+    ]
+  },
+  {
+    "objectID": "case-study/actuarial-mini-project.html#save-the-processed-dataset",
+    "href": "case-study/actuarial-mini-project.html#save-the-processed-dataset",
+    "title": "Actuarial Mini-Project",
+    "section": "6. Save The Processed Dataset",
+    "text": "6. Save The Processed Dataset\nThe processed dataset is saved after validation and derivation. This file can be reused in later exercises, but the notebook shows exactly how it was created.\n\ndir.create(\"../data/processed\", showWarnings = FALSE, recursive = TRUE)\n\nwrite_csv(portfolio, \"../data/processed/portfolio_clean.csv\")",
+    "crumbs": [
+      "Case Study",
+      "Mini Project"
+    ]
+  },
+  {
+    "objectID": "case-study/actuarial-mini-project.html#final-notes",
+    "href": "case-study/actuarial-mini-project.html#final-notes",
+    "title": "Actuarial Mini-Project",
+    "section": "Final Notes",
+    "text": "Final Notes\nThis mini-project is intentionally compact. It gives participants a complete workflow they can understand in three short sessions:\n\nSession 1 focuses on importing and validating the raw files.\nSession 2 focuses on joining, deriving, and summarising.\nSession 3 focuses on visualising and reporting.",
+    "crumbs": [
+      "Case Study",
+      "Mini Project"
+    ]
+  },
+  {
+    "objectID": "exercises/session01.html",
+    "href": "exercises/session01.html",
+    "title": "Session 1 Exercises",
+    "section": "",
+    "text": "Import policies.csv and claims.csv.\nCount rows and columns in both datasets.\nCheck for missing values.\nCheck whether every policy_id in claims exists in policies.\nSummarise earned premium by product.\nWrite two sentences documenting the main data quality findings.",
+    "crumbs": [
+      "Exercises",
+      "Session 1"
+    ]
+  },
+  {
+    "objectID": "exercises/session03.html",
+    "href": "exercises/session03.html",
+    "title": "Session 3 Exercises",
+    "section": "",
+    "text": "Create a bar chart of loss ratio by product.\nCreate a chart showing claim amount by claim type.\nCreate a chart comparing earned premium and claim amount by region.\nImprove labels, titles, and scales.\nAdd a short written interpretation below each chart.\nRender the final Quarto report.",
+    "crumbs": [
+      "Exercises",
+      "Session 3"
+    ]
+  },
+  {
+    "objectID": "solutions/session02.html",
+    "href": "solutions/session02.html",
+    "title": "Session 2 Instructor Notes",
+    "section": "",
+    "text": "Keep the modelling light. The main point is a reproducible workflow: validated data, explicit assumptions, grouped summaries, and readable code."
+  },
+  {
+    "objectID": "solutions/session02.html#teaching-notes",
+    "href": "solutions/session02.html#teaching-notes",
+    "title": "Session 2 Instructor Notes",
+    "section": "",
+    "text": "Keep the modelling light. The main point is a reproducible workflow: validated data, explicit assumptions, grouped summaries, and readable code."
+  },
+  {
+    "objectID": "solutions/session02.html#expected-summary-pattern",
+    "href": "solutions/session02.html#expected-summary-pattern",
+    "title": "Session 2 Instructor Notes",
+    "section": "Expected Summary Pattern",
+    "text": "Expected Summary Pattern\n\nsummarise_portfolio &lt;- function(data, group_var) {\n  data |&gt;\n    group_by({{ group_var }}) |&gt;\n    summarise(\n      earned_premium = sum(earned_premium, na.rm = TRUE),\n      claim_amount = sum(claim_amount, na.rm = TRUE),\n      loss_ratio = claim_amount / earned_premium,\n      .groups = \"drop\"\n    )\n}"
+  },
+  {
+    "objectID": "ai/ai-checkpoints.html",
+    "href": "ai/ai-checkpoints.html",
+    "title": "AI Checkpoints",
+    "section": "",
+    "text": "Use this checkpoint in every session:\n\nAttempt the task independently.\nAsk AI to explain unfamiliar code.\nAsk AI to identify possible bugs or assumptions.\nRun and validate the code yourself.\nCheck object names, data dimensions, missing values, and outputs.\nRewrite the explanation in your own words.",
+    "crumbs": [
+      "AI Guidance",
+      "AI Checkpoints"
+    ]
+  },
+  {
+    "objectID": "ai/prompt-patterns.html",
+    "href": "ai/prompt-patterns.html",
+    "title": "Prompt Patterns",
+    "section": "",
+    "text": "Explain this R code line by line for someone learning actuarial data analysis.\nPoint out any assumptions it makes about the data.",
+    "crumbs": [
+      "AI Guidance",
+      "Prompt Patterns"
+    ]
+  },
+  {
+    "objectID": "ai/prompt-patterns.html#explain-code",
+    "href": "ai/prompt-patterns.html#explain-code",
+    "title": "Prompt Patterns",
+    "section": "",
+    "text": "Explain this R code line by line for someone learning actuarial data analysis.\nPoint out any assumptions it makes about the data.",
+    "crumbs": [
+      "AI Guidance",
+      "Prompt Patterns"
+    ]
+  },
+  {
+    "objectID": "ai/prompt-patterns.html#debug-error",
+    "href": "ai/prompt-patterns.html#debug-error",
+    "title": "Prompt Patterns",
+    "section": "Debug Error",
+    "text": "Debug Error\nI received this R error. Explain the likely cause and suggest two things I should check before changing the code.",
+    "crumbs": [
+      "AI Guidance",
+      "Prompt Patterns"
+    ]
+  },
+  {
+    "objectID": "ai/prompt-patterns.html#review-assumptions",
+    "href": "ai/prompt-patterns.html#review-assumptions",
+    "title": "Prompt Patterns",
+    "section": "Review Assumptions",
+    "text": "Review Assumptions\nReview this actuarial summary code. What assumptions does it make about exposure, claims, missing values, and grouping variables?",
+    "crumbs": [
+      "AI Guidance",
+      "Prompt Patterns"
+    ]
+  },
+  {
+    "objectID": "ai/prompt-patterns.html#improve-reproducibility",
+    "href": "ai/prompt-patterns.html#improve-reproducibility",
+    "title": "Prompt Patterns",
+    "section": "Improve Reproducibility",
+    "text": "Improve Reproducibility\nReview this Quarto analysis for reproducibility. Suggest improvements related to file paths, package loading, seeds, intermediate objects, and output checks.",
+    "crumbs": [
+      "AI Guidance",
+      "Prompt Patterns"
+    ]
+  }
+]
