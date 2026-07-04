@@ -19,40 +19,52 @@ execute:
   message: false
 ---
 
-## R for Actuaries 2026 {.title-slide}
-
-::: {.eyebrow}
-2026 cohort
-:::
-
-### Reproducible analysis, visualization, and AI-assisted learning
-
-::: {.thread}
-Claims data -> Check -> Analyse -> Visualise -> Report
-:::
-
-::: {.notes}
-Open by positioning the course as professional actuarial workflow training, not a generic introduction to R syntax.
-:::
-
 ## Course Principle {.statement-slide}
 
 > Write code that another actuary can understand, reproduce, and trust.
+
+## What You Will Learn {.cards-slide}
+
+::: {.card-grid}
+::: {.metric-card .icon-card}
+**Work with data**
+
+Import and validate actuarial datasets.
+:::
+
+::: {.metric-card .icon-card}
+**Analyse**
+
+Create measures and summaries.
+:::
+
+::: {.metric-card .icon-card}
+**Visualise**
+
+Build charts that explain results.
+:::
+
+::: {.metric-card .icon-card}
+**Report**
+
+Communicate reproducible findings.
+:::
+:::
 
 ## Instructor {.profile-slide}
 
 ::: {.columns}
 ::: {.column width="58%"}
-Federica Gazzelloni is an actuary, statistician, data scientist, author, and educator specializing in actuarial modelling, health metrics, statistical computing, and reproducible research.
+Federica Gazzelloni is an actuary, statistician, data scientist, author, and educator.
 
-She is the author of *Health Metrics and the Spread of Infectious Diseases* and *CP2 Modelling Practice and Communication*.
+She develops training on R, Quarto, visualization, reproducible workflows, and AI-assisted analysis for actuarial and data science audiences.
 :::
 
 ::: {.column width="36%"}
-::: {.info-card}
+::: {.info-card .accent-card}
 **Training focus**
 
-R · Quarto · visualization · reproducible workflows · AI-assisted analysis
+Actuarial modelling · reproducible research · communication
 :::
 
 [Website](https://federicagazzelloni.com/)  
@@ -76,7 +88,7 @@ The same case study develops across all three sessions.
 :::
 
 ::: {.column width="40%"}
-::: {.step-card}
+::: {.step-card .accent-card}
 **Raw data becomes**
 
 Check  
@@ -89,9 +101,13 @@ Report
 
 ## Session 1 {.section-slide}
 
+::: {.section-number}
+01
+:::
+
 ### From raw data to clean data
 
-::: {.section-tags}
+::: {.section-tags .accent-block}
 Import · Inspect · Validate · Document
 :::
 
@@ -105,9 +121,13 @@ Key checks happen before actuarial interpretation.
 
 ## Session 2 {.section-slide}
 
+::: {.section-number}
+02
+:::
+
 ### From clean data to actuarial insight
 
-::: {.section-tags}
+::: {.section-tags .accent-block}
 Join · Derive · Summarise
 :::
 
@@ -157,9 +177,13 @@ Connect claims to premium in one interpretable measure.
 
 ## Session 3 {.section-slide}
 
+::: {.section-number}
+03
+:::
+
 ### From analysis to communication
 
-::: {.section-tags}
+::: {.section-tags .accent-block}
 Choose charts · Explain results · Render report
 :::
 
@@ -181,9 +205,13 @@ Turn row-level data into an actuarial comparison.
 
 ## AI Checkpoint {.section-slide}
 
+::: {.section-number}
+AI
+:::
+
 ### AI supports learning. It does not replace judgement.
 
-::: {.section-tags}
+::: {.section-tags .accent-block}
 Explain · Debug · Verify · Rewrite
 :::
 
@@ -217,9 +245,27 @@ Use your own words.
 
 ## Quarto + GitHub {.statement-slide}
 
-```text
-R Project -> Quarto -> Git commit -> GitHub -> Published report
-```
+::: {.workflow-ribbon}
+::: {.workflow-step}
+R Project
+:::
+
+::: {.workflow-step}
+Quarto
+:::
+
+::: {.workflow-step}
+Git commit
+:::
+
+::: {.workflow-step}
+GitHub
+:::
+
+::: {.workflow-step}
+Published report
+:::
+:::
 
 Reproducibility is part of the actuarial deliverable.
 
@@ -235,9 +281,13 @@ Reproducibility is part of the actuarial deliverable.
 
 ## Final Outcome {.section-slide}
 
+::: {.section-number}
+OUT
+:::
+
 ### Participants leave with a reusable workflow.
 
-::: {.section-tags}
+::: {.section-tags .accent-block}
 Analysis · Dataset · Charts · Report
 :::
 
