@@ -19,169 +19,229 @@ execute:
   message: false
 ---
 
-## R for Actuaries 2026
+## R for Actuaries 2026 {.title-slide}
 
-Reproducible analysis, visualization, and AI-assisted learning.
+::: {.eyebrow}
+2026 cohort
+:::
 
-::: {.callout-note}
-2026 cohort teaching materials.
+### Reproducible analysis, visualization, and AI-assisted learning
+
+::: {.thread}
+Claims data -> Check -> Analyse -> Visualise -> Report
 :::
 
 ::: {.notes}
 Open by positioning the course as professional actuarial workflow training, not a generic introduction to R syntax.
 :::
 
-## Course Principle
+## Course Principle {.statement-slide}
 
 > Write code that another actuary can understand, reproduce, and trust.
 
-## Instructor {.smaller}
+## Instructor {.profile-slide}
 
+::: {.columns}
+::: {.column width="58%"}
 Federica Gazzelloni is an actuary, statistician, data scientist, author, and educator specializing in actuarial modelling, health metrics, statistical computing, and reproducible research.
 
 She is the author of *Health Metrics and the Spread of Infectious Diseases* and *CP2 Modelling Practice and Communication*.
+:::
 
-[Website](https://federicagazzelloni.com/) · [LinkedIn](https://www.linkedin.com/in/federicagazzelloni/)
+::: {.column width="36%"}
+::: {.info-card}
+**Training focus**
 
-## Learning Journey
+R · Quarto · visualization · reproducible workflows · AI-assisted analysis
+:::
 
-![](figures/course-workflow.png){fig-alt="Course workflow from import to report" width="92%"}
+[Website](https://federicagazzelloni.com/)  
+[LinkedIn](https://www.linkedin.com/in/federicagazzelloni/)
+:::
+:::
 
+## Learning Journey {.figure-slide}
+
+![](figures/course-workflow.png){fig-alt="Course workflow from import to report"}
+
+::: {.caption}
 The same case study develops across all three sessions.
+:::
 
-## One Case Study
+## One Case Study {.split-slide}
 
 ::: {.columns}
-::: {.column width="48%"}
-![](figures/policy-sample-table.png){fig-alt="Sample policy data table" width="100%"}
+::: {.column width="54%"}
+![](figures/policy-sample-table.png){fig-alt="Sample policy data table"}
 :::
 
-::: {.column width="52%"}
-Raw policy and claims data become:
+::: {.column width="40%"}
+::: {.step-card}
+**Raw data becomes**
 
-- validated data
-- actuarial measures
-- charts
-- a Quarto report
+Check  
+Analyse  
+Visualise  
+Report
 :::
 :::
+:::
 
-## Session 1
+## Session 1 {.section-slide}
 
 ### From raw data to clean data
 
-Focus:
+::: {.section-tags}
+Import · Inspect · Validate · Document
+:::
 
-- import
-- inspect
-- validate
-- document
+## Session 1: Visual Check {.figure-slide}
 
-## Session 1 Visual Check
+![](figures/validation-summary-table.png){fig-alt="Validation summary table"}
 
-![](figures/validation-summary-table.png){fig-alt="Validation summary table" width="82%"}
+::: {.caption}
+Key checks happen before actuarial interpretation.
+:::
 
-One unmatched claim is intentional: students learn to check keys before analysis.
-
-## Session 2
+## Session 2 {.section-slide}
 
 ### From clean data to actuarial insight
 
-Focus:
+::: {.section-tags}
+Join · Derive · Summarise
+:::
 
-- join policy and claim records
-- create derived measures
-- summarise by segment
+## Core Measures {.cards-slide}
 
-## Core Measures
+::: {.card-grid}
+::: {.metric-card}
+**Frequency**
 
-| Measure | Question |
-|---|---|
-| Claim frequency | How often? |
-| Average severity | How large? |
-| Pure premium | How much per exposure? |
-| Loss ratio | How much of premium is used by claims? |
+How often?
+:::
 
-## Session 2 Example
+::: {.metric-card}
+**Severity**
 
-![](figures/earned-premium-by-product.png){fig-alt="Earned premium by product chart" width="88%"}
+How large?
+:::
 
-Start with portfolio size and premium before interpreting claim outcomes.
+::: {.metric-card}
+**Pure premium**
 
-## Session 2 Example
+How much per exposure?
+:::
 
-![](figures/loss-ratio-by-product.png){fig-alt="Loss ratio by product chart" width="88%"}
+::: {.metric-card}
+**Loss ratio**
 
-Loss ratio connects claims to premium in one interpretable measure.
+How much of premium?
+:::
+:::
 
-## Session 3
+## Premium View {.figure-slide}
+
+![](figures/earned-premium-by-product.png){fig-alt="Earned premium by product chart"}
+
+::: {.caption}
+Start with portfolio size and premium.
+:::
+
+## Loss Ratio View {.figure-slide}
+
+![](figures/loss-ratio-by-product.png){fig-alt="Loss ratio by product chart"}
+
+::: {.caption}
+Connect claims to premium in one interpretable measure.
+:::
+
+## Session 3 {.section-slide}
 
 ### From analysis to communication
 
-Focus:
+::: {.section-tags}
+Choose charts · Explain results · Render report
+:::
 
-- choose clear charts
-- write short interpretations
-- render a Quarto report
+## Claims By Type {.figure-slide}
 
-## Session 3 Example
+![](figures/claim-amount-by-type.png){fig-alt="Claim amount by claim type chart"}
 
-![](figures/claim-amount-by-type.png){fig-alt="Claim amount by claim type chart" width="88%"}
+::: {.caption}
+Show where claim cost is concentrated.
+:::
 
-Use charts to show where claim cost is concentrated.
+## Risk Band View {.figure-slide}
 
-## Session 3 Example
+![](figures/claim-frequency-by-risk-band.png){fig-alt="Claim frequency by risk band chart"}
 
-![](figures/claim-frequency-by-risk-band.png){fig-alt="Claim frequency by risk band chart" width="88%"}
+::: {.caption}
+Turn row-level data into an actuarial comparison.
+:::
 
-Risk bands turn row-level data into an actuarial comparison.
+## AI Checkpoint {.section-slide}
 
-## AI Checkpoint
+### AI supports learning. It does not replace judgement.
 
-1. Try it yourself.
-2. Ask AI to explain or debug.
-3. Run the code.
-4. Check data, dimensions, and outputs.
-5. Rewrite the result in your own words.
+::: {.section-tags}
+Explain · Debug · Verify · Rewrite
+:::
 
-## AI Is Not Autopilot
+## AI Workflow {.cards-slide}
 
-Use AI for:
+::: {.card-grid}
+::: {.metric-card}
+**Try**
 
-- explanation
-- debugging
-- first drafts
-- assumption checks
+Start yourself.
+:::
 
-Keep actuarial judgement with the analyst.
+::: {.metric-card}
+**Ask**
 
-## Quarto + GitHub
+Explain or debug.
+:::
+
+::: {.metric-card}
+**Check**
+
+Run and inspect.
+:::
+
+::: {.metric-card}
+**Rewrite**
+
+Use your own words.
+:::
+:::
+
+## Quarto + GitHub {.statement-slide}
 
 ```text
-R Project -> Quarto -> Git commit -> GitHub -> published report
+R Project -> Quarto -> Git commit -> GitHub -> Published report
 ```
 
 Reproducibility is part of the actuarial deliverable.
 
-## Teaching Materials
+## Teaching Materials {.cards-slide}
 
-- [Course overview](../index.html)
-- [Session 1](../sessions/01-introduction.html)
-- [Session 2](../sessions/02-analysis.html)
-- [Session 3](../sessions/03-visualization.html)
-- [Mini-project](../case-study/actuarial-mini-project.html)
+::: {.link-list}
+[Course overview](../index.html)  
+[Session 1](../sessions/01-introduction.html)  
+[Session 2](../sessions/02-analysis.html)  
+[Session 3](../sessions/03-visualization.html)  
+[Mini-project](../case-study/actuarial-mini-project.html)
+:::
 
-## Final Outcome
+## Final Outcome {.section-slide}
 
-Participants leave with:
+### Participants leave with a reusable workflow.
 
-- a reproducible analysis
-- a clean processed dataset
-- clear charts
-- a Quarto report
-- a reusable workflow
+::: {.section-tags}
+Analysis · Dataset · Charts · Report
+:::
 
-## Close
+## Close {.statement-slide}
 
 The goal is not to memorise R functions.
 
