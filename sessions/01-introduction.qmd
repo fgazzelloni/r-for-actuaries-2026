@@ -1,0 +1,78 @@
+---
+title: "Session 1: Introduction to R for Actuaries"
+---
+
+## Theme
+
+From raw actuarial data to a clean dataset.
+
+This session teaches the first part of the mini-project workflow: importing policy and claims data, inspecting structure, and performing basic validation checks.
+
+## Learning Outcomes
+
+At the end of this session, participants will be able to:
+
+- Navigate the RStudio environment and organise an R Project.
+- Import actuarial datasets into R.
+- Understand the main R data structures used in actuarial analysis.
+- Manipulate and validate policy and claims data using `dplyr`.
+- Perform common data quality checks, including missing values, duplicates, data types, and consistency checks.
+- Produce the first reproducible Quarto notebook for the case study.
+
+## Case Study Milestone
+
+Participants reproduce Sections 1 and 2 of the mini-project:
+
+- Read `data/raw/policies.csv`.
+- Read `data/raw/claims.csv`.
+- Convert date columns.
+- Check row counts, missing values, duplicates, policy IDs, claim dates, and numeric ranges.
+- Document what they found.
+
+## Suggested Timing
+
+| Time | Activity |
+|---:|---|
+| 15 min | RStudio, projects, files, and Quarto orientation |
+| 25 min | Importing policies and claims data |
+| 35 min | Data structures and `dplyr` basics |
+| 25 min | Data quality checks from the mini-project |
+| 15 min | AI checkpoint and reflection |
+| 5 min | Wrap-up |
+
+## Core Code From The Mini-Project
+
+```{r}
+#| eval: false
+
+# Load packages.
+library(dplyr)
+library(readr)
+
+# Read the raw files.
+policies <- read_csv("data/raw/policies.csv", show_col_types = FALSE)
+claims <- read_csv("data/raw/claims.csv", show_col_types = FALSE)
+
+# Convert text dates into real Date objects.
+policies <- policies |>
+  mutate(policy_start = as.Date(policy_start))
+
+claims <- claims |>
+  mutate(claim_date = as.Date(claim_date))
+
+# Inspect the data.
+glimpse(policies)
+glimpse(claims)
+
+# Find claims that do not match a known policy.
+unmatched_claims <- claims |>
+  anti_join(policies, by = "policy_id")
+```
+
+## AI Checkpoint
+
+1. Attempt the validation check independently.
+2. Ask AI to explain one unfamiliar line of code.
+3. Ask AI what assumptions the check makes.
+4. Run the code yourself and inspect the output.
+5. Rewrite the result in your own words.

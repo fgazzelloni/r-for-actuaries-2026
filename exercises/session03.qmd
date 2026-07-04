@@ -1,0 +1,11 @@
+---
+title: "Session 3 Exercises"
+---
+
+1. Create a bar chart of loss ratio by product.
+2. Create a chart showing claim amount by claim type.
+3. Create a chart comparing earned premium and claim amount by region.
+4. Improve labels, titles, and scales.
+5. Add a short written interpretation below each chart.
+6. Render the final Quarto report.
+

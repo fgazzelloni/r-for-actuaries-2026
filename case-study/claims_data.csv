@@ -1,0 +1,5 @@
+claim_id,policy_id,claim_date,claim_type,claim_amount,closed
+C0001,P0001,2025-02-14,Collision,1250,TRUE
+C0002,P0002,2025-04-02,Theft,900,TRUE
+C0003,P0004,2025-05-20,Collision,2200,FALSE
+

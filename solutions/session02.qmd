@@ -1,0 +1,24 @@
+---
+title: "Session 2 Instructor Notes"
+---
+
+## Teaching Notes
+
+Keep the modelling light. The main point is a reproducible workflow: validated data, explicit assumptions, grouped summaries, and readable code.
+
+## Expected Summary Pattern
+
+```{r}
+#| eval: false
+summarise_portfolio <- function(data, group_var) {
+  data |>
+    group_by({{ group_var }}) |>
+    summarise(
+      earned_premium = sum(earned_premium, na.rm = TRUE),
+      claim_amount = sum(claim_amount, na.rm = TRUE),
+      loss_ratio = claim_amount / earned_premium,
+      .groups = "drop"
+    )
+}
+```
+

@@ -1,0 +1,11 @@
+---
+title: "Session 2 Exercises"
+---
+
+1. Join policies and claims.
+2. Create an age band variable.
+3. Calculate claim count, claim amount, earned premium, and loss ratio by product.
+4. Repeat the summary by region.
+5. Write one helper function for a repeated summary.
+6. Document one assumption used in the analysis.
+

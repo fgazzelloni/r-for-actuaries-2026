@@ -1,0 +1,16 @@
+---
+title: "Session 3 Instructor Notes"
+---
+
+## Teaching Notes
+
+Ask participants what decision each chart supports. A technically correct chart is not enough; it should clarify a comparison, trend, distribution, or risk profile.
+
+## Review Checklist
+
+- Does the chart have a clear title?
+- Are labels understandable to a non-technical audience?
+- Are percentages and currency values formatted correctly?
+- Is the conclusion supported by the plotted data?
+- Could another actuary reproduce the figure?
+

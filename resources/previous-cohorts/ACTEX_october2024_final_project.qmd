@@ -1,0 +1,65 @@
+---
+title: "Introduction to R and Basic Data Analysis" 
+subtitle: "ACTEX Learning - AFDP: R Technical Skill Project"
+format: 
+  html:
+    toc: true
+editor: visual
+execute:
+  warning: false
+  message: false
+---
+
+```{r}
+#| echo: false
+library(ggplot2)
+book_theme <- theme_minimal() + 
+  theme(plot.title=element_text(face="bold"))
+ggplot2::theme_set(book_theme)
+```
+
+## Introduction
+
+In this project assignment, you will be working on a dataset from the **Casualty Actuarial Society (CAS)** website. The dataset contains information on the workers' compensation insurance industry in the United States. The dataset includes data on premiums, losses, and expenses for various years.
+
+## Objective
+
+The goal of this assignment is to analyze and model workers’ compensation claims data using the `wkcomp_pos` dataset. You will explore patterns in incurred and paid losses, understand how they develop over time, and build a predictive model for cumulative paid losses using regression techniques.
+
+## Deliverables
+
+1.  Report detailing:
+
+-   Your data exploration process and key insights.
+-   The regression model and its interpretation.
+-   Model evaluation and assumptions check.
+-   Optional: comparison between the linear model and the advanced model (e.g., GAM).
+
+2.  R Code used for the analysis, clearly documented and structured.
+
+## Learning Outcomes
+
+-   Gain experience with real-world workers’ compensation data.
+-   Develop proficiency in data manipulation and visualization using tidyverse.
+-   Build and evaluate regression models for loss prediction.
+-   Understand the importance of model assumptions and how to check them visually.
+
+## Tasks
+
+The project assignment is divided into four main tasks:
+
+1.  **Data Exploration**: Load the dataset, check for missing values, and visualize key relationships.
+2.  **Modeling the Loss Development**: Create a regression model to predict cumulative paid losses.
+3.  **Model Evaluation**: Evaluate the model using metrics such as R-squared, RMSE, and AIC.
+4.  **Advanced Modeling (Optional)**: Try an advanced model (e.g., GAM) and compare its performance to the linear model.
+
+## References
+
+-   [Casualty Actuarial Society (CAS) Data](https://www.casact.org/publications-research/research/research-resources/loss-reserving-data-pulled-naic-schedule-p)
+-   [R for Data Science](https://r4ds.hadley.nz/)
+-   [R for Actuaries and Data Scientists with Application to Insurance](https://info.actexmadriver.com/r-for-actuaries)
+-   [Statistical Foundation of Actuarial Learning and Its Applications](https://link.springer.com/book/10.1007/978-3-031-12409-9)
+
+------------------------------------------------------------------------
+
+Happy learning! Good luck!

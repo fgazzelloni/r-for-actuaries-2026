@@ -1,0 +1,11 @@
+---
+title: "Session 1 Exercises"
+---
+
+1. Import `policies.csv` and `claims.csv`.
+2. Count rows and columns in both datasets.
+3. Check for missing values.
+4. Check whether every `policy_id` in claims exists in policies.
+5. Summarise earned premium by product.
+6. Write two sentences documenting the main data quality findings.
+

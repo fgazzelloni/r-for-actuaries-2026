@@ -1,0 +1,64 @@
+---
+title: "R for Actuaries 2026"
+subtitle: "Reproducible Analysis, Visualization, and AI-Assisted Learning"
+---
+
+## Course Overview
+
+This repository contains the teaching materials for the 2026 cohort of R for Actuaries.
+
+This three-session course introduces R through a realistic actuarial workflow. Participants work on one mini-project that starts with raw policy and claims data and ends with a reproducible Quarto report.
+
+The course is designed around a professional principle:
+
+> Write code that another actuary can understand, reproduce, and trust.
+
+## Instructor
+
+Federica Gazzelloni is an actuary, statistician, data scientist, author, and educator with expertise in actuarial modelling, health metrics, statistical computing, and reproducible research. She is the author of *Health Metrics and the Spread of Infectious Diseases* (CRC Press) and *CP2 Modelling Practice and Communication* (ACTEX Learning), and has extensive experience developing educational material for actuarial and data science audiences.
+
+A Certified Carpentries Instructor and Lead Organizer of Rome R Users Group, Federica designs and delivers training on R, Quarto, data visualization, reproducible workflows, and AI-assisted data analysis. Her work combines actuarial science with modern open-source tools to promote transparent, reproducible, and collaborative analytical practices.
+
+Her research and teaching focus on actuarial modelling, health data analytics, statistical methods, and the effective communication of analytical results, helping professionals build practical skills that can be applied to real-world actuarial and data science problems.
+
+- Website: [federicagazzelloni.com](https://federicagazzelloni.com/)
+- LinkedIn: [federicagazzelloni](https://www.linkedin.com/in/federicagazzelloni/)
+
+## Course Thread
+
+```text
+Claims and policy data
+  -> data validation and preparation
+  -> reproducible actuarial analysis
+  -> data visualization
+  -> Quarto report
+  -> GitHub publication
+```
+
+## Sessions
+
+1. **Introduction to R for Actuaries:** import data, inspect structure, and perform data checks.
+2. **Reproducible Actuarial Analysis with R:** create derived measures, summaries, and simple analysis outputs.
+3. **Data Visualization and Reporting with Quarto:** communicate findings with charts, tables, and a concise report.
+
+## Expected Participant Profile
+
+| Background | Assumed knowledge |
+|---|---|
+| Actuarial students | Basic actuarial concepts |
+| Qualified actuaries | No prior R experience required |
+| Data analysts | Basic spreadsheet skills |
+| Programmers | No prior knowledge of actuarial applications required |
+
+## Software Requirements
+
+Participants should install R, RStudio, Git, Quarto, and create a GitHub account before the first session.
+
+Recommended R packages:
+
+```r
+install.packages(c(
+  "tidyverse", "janitor", "skimr", "ggplot2",
+  "readr", "quarto", "gt", "patchwork"
+))
+```

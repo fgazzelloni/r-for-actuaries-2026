@@ -1,0 +1,40 @@
+project:
+  type: website
+
+website:
+  page-navigation: true
+  title: "Introduction to R and Basic Data Analysis"
+  site-url: "https://fgazzelloni.github.io/ACTEX_october2024/" 
+  repo-url: "https://github.com/Fgazzelloni/ACTEX_october2024"
+  repo-actions: [edit, issue]
+  
+  page-footer:
+    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+    left: "&copy; CC-By AFDP 2024 - ACTEX Learning"  
+  
+  sidebar:
+    logo: "images/actex_logo.png"
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - href: index.qmd
+        text: Welcome 
+      - href: 01_introduction_to_r.qmd  
+        text: Introduction to R
+      - href: 02_practice_with_r.qmd
+        text: Practice with R
+      - href: 03_introduction_to_pm.qmd
+        text: Introduction to Predictive Modeling
+      - href: 04_practice_pm.qmd
+        text: Practice Predictive Modeling
+      - href: 05_final_project.qmd
+        text: Final Project
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+

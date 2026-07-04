@@ -1,0 +1,13 @@
+---
+title: "AI Checkpoints"
+---
+
+Use this checkpoint in every session:
+
+1. Attempt the task independently.
+2. Ask AI to explain unfamiliar code.
+3. Ask AI to identify possible bugs or assumptions.
+4. Run and validate the code yourself.
+5. Check object names, data dimensions, missing values, and outputs.
+6. Rewrite the explanation in your own words.
+

@@ -1,0 +1,29 @@
+---
+title: "Prompt Patterns"
+---
+
+## Explain Code
+
+```text
+Explain this R code line by line for someone learning actuarial data analysis.
+Point out any assumptions it makes about the data.
+```
+
+## Debug Error
+
+```text
+I received this R error. Explain the likely cause and suggest two things I should check before changing the code.
+```
+
+## Review Assumptions
+
+```text
+Review this actuarial summary code. What assumptions does it make about exposure, claims, missing values, and grouping variables?
+```
+
+## Improve Reproducibility
+
+```text
+Review this Quarto analysis for reproducibility. Suggest improvements related to file paths, package loading, seeds, intermediate objects, and output checks.
+```
+

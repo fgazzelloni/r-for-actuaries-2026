@@ -1,0 +1,407 @@
+---
+title: "Actuarial Mini-Project"
+subtitle: "From raw policy and claims data to a reproducible Quarto report"
+---
+
+## Objective
+
+Build a reproducible actuarial analysis from simplified policy and claims data. This notebook is the source of truth for the course: each teaching session unpacks one part of this workflow.
+
+The professional goal is simple:
+
+> Write code that another actuary can understand, reproduce, and trust.
+
+## Workflow
+
+1. Import `policies.csv` and `claims.csv`.
+2. Validate row counts, missing values, duplicates, keys, dates, and numeric ranges.
+3. Join policy and claim records.
+4. Create derived actuarial measures: claim frequency, average severity, pure premium, and loss ratio.
+5. Summarise results by product, region, age band, and risk score band.
+6. Create charts for communication.
+7. Save the clean processed dataset.
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+# These packages are enough for the whole mini-project.
+# dplyr: data manipulation
+# readr: reading and writing CSV files
+# ggplot2: charts
+# scales: axis labels such as percentages and currency
+# knitr: simple tables in the rendered report
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(scales)
+library(knitr)
+```
+
+## 1. Import The Data
+
+We start by reading the raw data. Keeping raw data in `data/raw/` makes the analysis easier to reproduce because the original inputs are separated from any processed outputs.
+
+```{r}
+#| label: import-data
+
+policies <- read_csv("data/raw/policies.csv", show_col_types = FALSE)
+claims <- read_csv("data/raw/claims.csv", show_col_types = FALSE)
+
+# Convert date columns from text to Date objects.
+# This lets R compare dates correctly later.
+policies <- policies |>
+  mutate(policy_start = as.Date(policy_start))
+
+claims <- claims |>
+  mutate(claim_date = as.Date(claim_date))
+
+glimpse(policies)
+glimpse(claims)
+```
+
+## 2. Validate The Data
+
+Data validation is actuarial work. Before calculating any metrics, we check whether the data is complete, consistent, and suitable for analysis.
+
+### Row Counts
+
+```{r}
+#| label: row-counts
+
+row_counts <- tibble(
+  dataset = c("policies", "claims"),
+  rows = c(nrow(policies), nrow(claims)),
+  columns = c(ncol(policies), ncol(claims))
+)
+
+kable(row_counts)
+```
+
+### Missing Values
+
+```{r}
+#| label: missing-values
+
+# Count missing values in every column of a data frame.
+count_missing <- function(data, dataset_name) {
+  data |>
+    summarise(across(everything(), ~ sum(is.na(.x)))) |>
+    tidyr::pivot_longer(
+      cols = everything(),
+      names_to = "column",
+      values_to = "missing_values"
+    ) |>
+    mutate(dataset = dataset_name, .before = column)
+}
+
+missing_summary <- bind_rows(
+  count_missing(policies, "policies"),
+  count_missing(claims, "claims")
+)
+
+kable(missing_summary)
+```
+
+### Duplicate Identifiers
+
+```{r}
+#| label: duplicates
+
+duplicate_checks <- tibble(
+  check = c("Duplicate policy_id in policies", "Duplicate claim_id in claims"),
+  duplicates = c(
+    sum(duplicated(policies$policy_id)),
+    sum(duplicated(claims$claim_id))
+  )
+)
+
+kable(duplicate_checks)
+```
+
+### Policy ID Checks
+
+Every claim should connect to a policy. This check finds claims with a `policy_id` that does not appear in the policy file.
+
+```{r}
+#| label: policy-id-checks
+
+unmatched_claims <- claims |>
+  anti_join(policies, by = "policy_id")
+
+kable(unmatched_claims)
+```
+
+The sample data intentionally includes one unmatched claim so participants can practice finding key problems.
+
+### Claim Dates Versus Policy Dates
+
+A claim date before the policy start date should be investigated. This check only applies to claims that successfully match a policy.
+
+```{r}
+#| label: date-checks
+
+claim_date_checks <- claims |>
+  inner_join(policies |> select(policy_id, policy_start), by = "policy_id") |>
+  mutate(claim_before_policy_start = claim_date < policy_start)
+
+claims_before_policy_start <- claim_date_checks |>
+  filter(claim_before_policy_start)
+
+kable(claims_before_policy_start)
+```
+
+### Numeric Range Checks
+
+These checks are deliberately simple. They are here to teach the habit of asking whether values are plausible before using them.
+
+```{r}
+#| label: numeric-range-checks
+
+range_checks <- tibble(
+  check = c(
+    "Driver age outside 16 to 100",
+    "Risk score outside 0 to 1",
+    "Exposure less than or equal to 0",
+    "Earned premium less than 0",
+    "Claim amount less than 0"
+  ),
+  flagged_rows = c(
+    sum(policies$driver_age < 16 | policies$driver_age > 100, na.rm = TRUE),
+    sum(policies$risk_score < 0 | policies$risk_score > 1, na.rm = TRUE),
+    sum(policies$exposure <= 0, na.rm = TRUE),
+    sum(policies$earned_premium < 0, na.rm = TRUE),
+    sum(claims$claim_amount < 0, na.rm = TRUE)
+  )
+)
+
+kable(range_checks)
+```
+
+## 3. Create A Joined Portfolio Dataset
+
+For most summaries, we want one row per policy. We first summarise valid claims by policy, then join those claim totals back to the policy data.
+
+```{r}
+#| label: joined-portfolio
+
+# Keep only claims that match a known policy.
+# The unmatched claim remains documented above, but is excluded from portfolio metrics.
+valid_claims <- claims |>
+  semi_join(policies, by = "policy_id")
+
+claims_by_policy <- valid_claims |>
+  group_by(policy_id) |>
+  summarise(
+    claim_count = n(),
+    claim_amount = sum(claim_amount, na.rm = TRUE),
+    first_claim_date = min(claim_date),
+    has_open_claim = any(!closed),
+    .groups = "drop"
+  )
+
+portfolio <- policies |>
+  left_join(claims_by_policy, by = "policy_id") |>
+  mutate(
+    # Policies with no claims should have zero claim count and zero claim amount.
+    claim_count = if_else(is.na(claim_count), 0L, claim_count),
+    claim_amount = if_else(is.na(claim_amount), 0, claim_amount),
+    has_open_claim = if_else(is.na(has_open_claim), FALSE, has_open_claim)
+  )
+
+kable(portfolio)
+```
+
+## 4. Add Derived Actuarial Measures
+
+These measures are simplified for teaching. They introduce the core ideas without turning the workshop into an advanced pricing course.
+
+```{r}
+#| label: derived-measures
+
+portfolio <- portfolio |>
+  mutate(
+    age_band = cut(
+      driver_age,
+      breaks = c(0, 25, 40, 60, Inf),
+      labels = c("Under 25", "25-40", "41-60", "61+"),
+      right = FALSE
+    ),
+    risk_band = case_when(
+      risk_score < 0.40 ~ "Low",
+      risk_score < 0.65 ~ "Medium",
+      TRUE ~ "High"
+    ),
+    claim_frequency = claim_count / exposure,
+    average_severity = if_else(claim_count > 0, claim_amount / claim_count, 0),
+    pure_premium = claim_amount / exposure,
+    loss_ratio = claim_amount / earned_premium
+  )
+
+kable(
+  portfolio |>
+    select(
+      policy_id, product, region, exposure, earned_premium,
+      claim_count, claim_amount, claim_frequency,
+      average_severity, pure_premium, loss_ratio
+    )
+)
+```
+
+### Portfolio-Level Metrics
+
+```{r}
+#| label: portfolio-metrics
+
+portfolio_metrics <- portfolio |>
+  summarise(
+    policies = n(),
+    total_exposure = sum(exposure),
+    total_earned_premium = sum(earned_premium),
+    total_claim_count = sum(claim_count),
+    total_claim_amount = sum(claim_amount),
+    claim_frequency = total_claim_count / total_exposure,
+    average_severity = total_claim_amount / total_claim_count,
+    pure_premium = total_claim_amount / total_exposure,
+    loss_ratio = total_claim_amount / total_earned_premium
+  )
+
+kable(portfolio_metrics)
+```
+
+### Segment Summaries
+
+```{r}
+#| label: segment-summary-function
+
+# A small reusable function keeps repeated summaries consistent.
+summarise_segment <- function(data, group_variable) {
+  data |>
+    group_by({{ group_variable }}) |>
+    summarise(
+      policies = n(),
+      exposure = sum(exposure),
+      earned_premium = sum(earned_premium),
+      claim_count = sum(claim_count),
+      claim_amount = sum(claim_amount),
+      claim_frequency = claim_count / exposure,
+      average_severity = if_else(claim_count > 0, claim_amount / claim_count, 0),
+      pure_premium = claim_amount / exposure,
+      loss_ratio = claim_amount / earned_premium,
+      .groups = "drop"
+    )
+}
+
+summary_by_product <- summarise_segment(portfolio, product)
+summary_by_region <- summarise_segment(portfolio, region)
+summary_by_age <- summarise_segment(portfolio, age_band)
+summary_by_risk <- summarise_segment(portfolio, risk_band)
+
+kable(summary_by_product)
+```
+
+## 5. Communicate Results With Reusable Plots
+
+These plots become the starting point for Session 3. They are intentionally simple: each chart should answer one actuarial question.
+
+```{r}
+#| label: plot-theme
+
+theme_actex <- function() {
+  theme_minimal(base_size = 12) +
+    theme(
+      plot.title.position = "plot",
+      panel.grid.minor = element_blank(),
+      legend.position = "bottom"
+    )
+}
+```
+
+### Plot 1: Earned Premium By Product
+
+```{r}
+#| label: plot-earned-premium
+
+ggplot(summary_by_product, aes(x = product, y = earned_premium)) +
+  geom_col(fill = "#2B6CB0") +
+  scale_y_continuous(labels = dollar) +
+  labs(
+    title = "Earned premium by product",
+    x = "Product",
+    y = "Earned premium"
+  ) +
+  theme_actex()
+```
+
+### Plot 2: Loss Ratio By Product
+
+```{r}
+#| label: plot-loss-ratio
+
+ggplot(summary_by_product, aes(x = product, y = loss_ratio)) +
+  geom_col(fill = "#C05621") +
+  scale_y_continuous(labels = percent) +
+  labs(
+    title = "Loss ratio by product",
+    x = "Product",
+    y = "Loss ratio"
+  ) +
+  theme_actex()
+```
+
+### Plot 3: Claim Amount By Claim Type
+
+```{r}
+#| label: plot-claim-type
+
+valid_claims |>
+  group_by(claim_type) |>
+  summarise(claim_amount = sum(claim_amount), .groups = "drop") |>
+  ggplot(aes(x = reorder(claim_type, claim_amount), y = claim_amount)) +
+  geom_col(fill = "#2F855A") +
+  coord_flip() +
+  scale_y_continuous(labels = dollar) +
+  labs(
+    title = "Claim amount by claim type",
+    x = "Claim type",
+    y = "Claim amount"
+  ) +
+  theme_actex()
+```
+
+### Plot 4: Claim Frequency By Risk Band
+
+```{r}
+#| label: plot-risk-band-frequency
+
+ggplot(summary_by_risk, aes(x = risk_band, y = claim_frequency)) +
+  geom_col(fill = "#6B46C1") +
+  scale_y_continuous(labels = number_format(accuracy = 0.01)) +
+  labs(
+    title = "Claim frequency by risk band",
+    x = "Risk band",
+    y = "Claims per exposure"
+  ) +
+  theme_actex()
+```
+
+## 6. Save The Processed Dataset
+
+The processed dataset is saved after validation and derivation. This file can be reused in later exercises, but the notebook shows exactly how it was created.
+
+```{r}
+#| label: save-processed-data
+
+dir.create("data/processed", showWarnings = FALSE, recursive = TRUE)
+
+write_csv(portfolio, "data/processed/portfolio_clean.csv")
+```
+
+## Final Notes
+
+This mini-project is intentionally compact. It gives participants a complete workflow they can understand in three short sessions:
+
+- Session 1 focuses on importing and validating the raw files.
+- Session 2 focuses on joining, deriving, and summarising.
+- Session 3 focuses on visualising and reporting.

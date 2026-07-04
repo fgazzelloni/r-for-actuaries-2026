@@ -1,0 +1,207 @@
+---
+title: "R for Actuaries 2026: Reproducible Analysis, Visualization, and AI-Assisted Learning"
+format:
+  html:
+    toc: true
+    code-fold: false
+---
+
+## Course Overview
+
+This three-session course introduces R through a realistic actuarial workflow for the 2026 cohort. Rather than learning isolated programming concepts, participants work on a single actuarial mini-project that evolves throughout the course. Starting from raw claims and policy data, they learn how to validate and prepare data, perform a reproducible actuarial analysis, and communicate results through clear visualisations and a Quarto report.
+
+Throughout the course, participants are introduced to practical uses of AI as a coding assistant, reviewer, and learning companion. The emphasis is on understanding, verifying, and improving code rather than generating it blindly. By the end of the course, participants will have developed a complete, reproducible actuarial analysis using modern open-source tools and workflows.
+
+## Course Thread
+
+```text
+Claims and policy data
+  -> data validation and preparation
+  -> reproducible actuarial analysis
+  -> data visualization
+  -> Quarto report
+  -> GitHub publication
+```
+
+## Learning Philosophy
+
+Write code that another actuary can understand, reproduce, and trust.
+
+This sentence is the guiding principle for the course. The goal is not to cover as many R functions as possible; it is to help participants develop a professional workflow for checking data, making assumptions explicit, communicating results, and leaving behind work that can be reviewed by another person.
+
+## Instructor
+
+Federica Gazzelloni is an actuary, statistician, data scientist, author, and educator with expertise in actuarial modelling, health metrics, statistical computing, and reproducible research. She is the author of *Health Metrics and the Spread of Infectious Diseases* (CRC Press) and *CP2 Modelling Practice and Communication* (ACTEX Learning), and has extensive experience developing educational material for actuarial and data science audiences.
+
+A Certified Carpentries Instructor and Lead Organizer of Rome R Users Group, Federica designs and delivers training on R, Quarto, data visualization, reproducible workflows, and AI-assisted data analysis. Her work combines actuarial science with modern open-source tools to promote transparent, reproducible, and collaborative analytical practices.
+
+Her research and teaching focus on actuarial modelling, health data analytics, statistical methods, and the effective communication of analytical results, helping professionals build practical skills that can be applied to real-world actuarial and data science problems.
+
+- Website: [federicagazzelloni.com](https://federicagazzelloni.com/)
+- LinkedIn: [federicagazzelloni](https://www.linkedin.com/in/federicagazzelloni/)
+
+## Expected Participant Profile
+
+| Background | Assumed knowledge |
+|---|---|
+| Actuarial students | Basic actuarial concepts |
+| Qualified actuaries | No prior R experience required |
+| Data analysts | Basic spreadsheet skills |
+| Programmers | No prior knowledge of actuarial applications required |
+
+## Software Requirements
+
+Participants should install the following before the first session:
+
+- Latest version of R
+- Latest version of RStudio
+- Git
+- Quarto
+- A GitHub account
+- A modern web browser
+
+Recommended R packages:
+
+- `tidyverse`
+- `janitor`
+- `skimr`
+- `ggplot2`
+- `readr`
+- `quarto`
+- `gt`
+- `patchwork`
+
+## Session 1: Introduction To R For Actuaries
+
+**Theme:** From raw actuarial data to a clean dataset.
+
+At the end of this session, participants will be able to:
+
+- Navigate the RStudio environment and organise an R Project.
+- Import actuarial datasets into R.
+- Understand the main R data structures used in actuarial analysis.
+- Manipulate and validate policy and claims data using `dplyr`.
+- Perform common data quality checks, including missing values, duplicates, data types, and consistency checks.
+- Produce the first reproducible Quarto notebook for the case study.
+
+### Case Study Milestone
+
+Import the claims and policy datasets, perform initial exploratory checks, identify data quality issues, and document findings.
+
+### AI Checkpoint
+
+1. Attempt the task independently.
+2. Ask AI to explain unfamiliar code.
+3. Ask AI to identify possible bugs or assumptions.
+4. Run and validate the code yourself.
+5. Rewrite the explanation in your own words.
+
+## Session 2: Reproducible Actuarial Analysis With R
+
+**Theme:** Turning validated data into actuarial insight.
+
+At the end of this session, participants will be able to:
+
+- Build a reproducible actuarial workflow in R.
+- Create derived variables and actuarial summary measures.
+- Write reusable functions for repetitive tasks.
+- Perform grouped summaries and simple statistical analyses.
+- Organise code for readability, reuse, and reproducibility.
+- Document assumptions and intermediate results within a Quarto notebook.
+
+### Case Study Milestone
+
+Transform the cleaned data into an actuarial summary by producing portfolio statistics, derived measures, and simple analytical outputs suitable for decision-making.
+
+### AI Checkpoint
+
+Use AI to review code structure, suggest improvements, and identify potential errors, while independently verifying every output and assumption.
+
+## Session 3: Data Visualization And Reporting With Quarto
+
+**Theme:** Communicating actuarial results.
+
+At the end of this session, participants will be able to:
+
+- Produce effective visualisations using `ggplot2`.
+- Select appropriate graphics for actuarial summaries and comparisons.
+- Integrate narrative, code, tables, and figures within Quarto.
+- Generate a reproducible HTML report.
+- Present actuarial findings clearly to both technical and non-technical audiences.
+- Publish the completed project to GitHub.
+
+### Case Study Milestone
+
+Complete the actuarial mini-project by producing a concise Quarto report containing the analysis, visualisations, and interpretation of results.
+
+### AI Checkpoint
+
+Use AI to improve explanations, review the report, and suggest presentation improvements while ensuring that every conclusion remains supported by the underlying analysis.
+
+## Suggested Repository Structure
+
+```text
+r-for-actuaries-2026/
+|-- README.md
+|-- LICENSE
+|-- _quarto.yml
+|-- index.qmd
+|
+|-- sessions/
+|   |-- 01-introduction.qmd
+|   |-- 02-analysis.qmd
+|   `-- 03-visualization.qmd
+|
+|-- case-study/
+|   |-- actuarial-mini-project.qmd
+|   |-- policy_data.csv
+|   |-- claims_data.csv
+|   `-- data_dictionary.qmd
+|
+|-- exercises/
+|   |-- session01.qmd
+|   |-- session02.qmd
+|   `-- session03.qmd
+|
+|-- solutions/
+|   |-- session01.qmd
+|   |-- session02.qmd
+|   `-- session03.qmd
+|
+|-- ai/
+|   |-- ai-use-guidelines.qmd
+|   |-- prompt-patterns.qmd
+|   `-- ai-checkpoints.qmd
+|
+|-- R/
+|   |-- helper-functions.R
+|   `-- theme.R
+|
+|-- data/
+|   |-- raw/
+|   `-- processed/
+|
+|-- images/
+`-- docs/
+```
+
+## Pedagogical Principles
+
+- Learn R by solving actuarial problems rather than memorising syntax.
+- Use one case study that evolves throughout the course.
+- Introduce reproducibility from the first line of code using R Projects, Quarto, and GitHub.
+- Encourage participants to write clear, readable, and reusable code.
+- Use AI to support learning, debugging, and code review, while maintaining human responsibility for interpretation and actuarial judgement.
+- Produce a complete, reproducible analytical report as the final outcome.
+
+## Recommended Source Material To Adapt
+
+- ACTEX 2025 introduction and data structure material for RStudio, R Projects, objects, data frames, and functions.
+- ACTEX 2025 motor insurance claims material for policy and claims data validation, joins, summaries, and premium-style derived measures.
+- ACTEX 2025 predictive modelling material for simple actuarial analysis and actual-versus-predicted communication.
+- ACTEX October 2024 final project structure for the progressive case-study milestone format.
+- R-Ladies Rome material on GitHub, `dplyr`, Quarto, LLMs, health analytics, and visualization for practical workflow framing.
+
+## Scalability
+
+This framework can later support an intermediate or advanced course by replacing the case study with more sophisticated actuarial applications while keeping the workflow unchanged.

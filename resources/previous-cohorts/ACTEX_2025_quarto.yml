@@ -1,0 +1,80 @@
+project:
+  type: website
+
+website:
+  open-graph: true
+  page-navigation: true
+  back-to-top-navigation: true
+  title: "Introduction to R and Basic Data Analysis for Actuarial Science"
+  site-url: "https://fgazzelloni.github.io/ACTEX_2025/" 
+  repo-url: "https://github.com/Fgazzelloni/ACTEX_2025"
+  favicon: images/actex_logo.png
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "**Alert** - The course will be held on Tuesday, 2 September 2025 at 15:00 CEST (UTC+2)."
+    type: primary
+    position: below-navbar
+  repo-actions: [edit, issue]
+  
+  
+  page-footer:
+    left: |
+      Copyright © 2025 <a href="https://www.actexlearning.com/">ACTEX Learning | AFDP</a><br> Designer & Maintainer: <a href="https://github.com/Fgazzelloni">Federica Gazzelloni</a><br> Powered by: <a href="https://quarto.org/">Quarto & GitHub Pages | <a href="/LICENSE.md">MIT License.</a>
+    center: |
+      <a href="https://www.actexlearning.com/" target="_blank">
+      <img src="images/actex_logo2.png" alt="ACTEX Logo" style="height:40px;">
+      </a>
+    right:
+      - icon: github
+        href: "https://github.com/Fgazzelloni/ACTEX_2025"
+      - icon: linkedin
+        href: "https://www.linkedin.com/company/actexlearning"
+      - icon: globe
+        href: "https://www.actuarialuniversity.com/"
+      - icon: envelope
+        href: mailto:fede.gazzelloni@gmail.com
+
+  
+  sidebar:
+    logo: "images/actex_logo.png"
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - text: "1. Welcome"
+        href: index.qmd
+      - text: "2. Introduction to R"
+        href: 01_introduction_to_r.qmd  
+      - text: "3. Data types and structures"
+        href: 02_data_types_and_structures.qmd
+      - section: "4. Examples and Exercises"
+        contents: 
+          - text: "4.1 Data manipulation and visualization"
+            href: 03_data_manipulation_and_visualization.qmd
+          - text: "4.2 Predictive modeling"
+            href: 04_predictive_modeling.qmd
+          - text: "4.3 Clustering"
+            href: 05_clustering.qmd
+      - text: "5. Conclusion"
+        href: 06_conclusion.qmd      
+
+        
+format:
+  html:
+    theme: cosmo
+    toc: false
+    highlight-style: github 
+    smooth-scroll: true
+    link-external-newwindow: true
+    citations-hover: true
+    footnotes-hover: true
+    code-copy: true
+    code-overflow: wrap
+    code-link: true
+    linestretch: 1.7 
+   
+
+editor: visual
+execute:
+  freeze: auto 

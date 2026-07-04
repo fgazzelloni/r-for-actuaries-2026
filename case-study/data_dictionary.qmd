@@ -1,0 +1,33 @@
+---
+title: "Data Dictionary"
+---
+
+## `policies.csv`
+
+| Variable | Description |
+|---|---|
+| `policy_id` | Unique policy identifier |
+| `policyholder_id` | Unique policyholder identifier |
+| `product` | Insurance product |
+| `region` | Policy region |
+| `driver_age` | Driver or insured age |
+| `risk_score` | Simplified underwriting risk score |
+| `exposure` | Earned exposure for the policy year |
+| `earned_premium` | Earned premium amount |
+| `policy_start` | Policy start date |
+
+## `claims.csv`
+
+| Variable | Description |
+|---|---|
+| `claim_id` | Unique claim identifier |
+| `policy_id` | Policy identifier used for joining |
+| `claim_date` | Claim occurrence date |
+| `claim_type` | Claim category |
+| `claim_amount` | Incurred claim amount |
+| `closed` | Whether the claim is closed |
+
+## Known Teaching Features
+
+The sample data is intentionally small. It includes varied risk scores, regions, claim types, and one claim linked to a policy so participants can practice validation and joins without spending the session on data engineering.
+

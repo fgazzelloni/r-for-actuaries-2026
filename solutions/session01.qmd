@@ -1,0 +1,18 @@
+---
+title: "Session 1 Instructor Notes"
+---
+
+## Teaching Notes
+
+Emphasise that data checks are actuarial work, not administrative setup. Participants should learn to distrust imported data until keys, types, ranges, and totals have been checked.
+
+## Expected Checks
+
+```{r}
+#| eval: false
+policies |> summarise(rows = n(), policies = n_distinct(policy_id))
+claims |> summarise(rows = n(), claims = n_distinct(claim_id))
+
+anti_join(claims, policies, by = "policy_id")
+```
+

@@ -1,0 +1,65 @@
+---
+title: "Session 3: Data Visualization and Reporting with Quarto"
+---
+
+## Theme
+
+Communicating actuarial results.
+
+This session teaches the final part of the mini-project workflow: choosing clear charts, writing plain-language interpretation, rendering a Quarto report, and saving the processed dataset.
+
+## Learning Outcomes
+
+At the end of this session, participants will be able to:
+
+- Produce effective visualisations using `ggplot2`.
+- Select appropriate graphics for actuarial summaries and comparisons.
+- Integrate narrative, code, tables, and figures within Quarto.
+- Generate a reproducible HTML report.
+- Present actuarial findings clearly to both technical and non-technical audiences.
+- Publish the completed project to GitHub.
+
+## Case Study Milestone
+
+Participants reproduce Sections 5 and 6 of the mini-project:
+
+- Create reusable plots for product, claim type, and risk-band summaries.
+- Explain what each chart shows.
+- Save `data/processed/portfolio_clean.csv`.
+- Render the final Quarto report.
+
+## Suggested Timing
+
+| Time | Activity |
+|---:|---|
+| 20 min | Chart choice for actuarial communication |
+| 30 min | Distribution, comparison, and risk profile charts |
+| 25 min | Tables and narrative in Quarto |
+| 25 min | Mini-project report completion |
+| 15 min | AI report review |
+| 5 min | Wrap-up |
+
+## Core Code From The Mini-Project
+
+```{r}
+#| eval: false
+
+library(ggplot2)
+library(scales)
+
+ggplot(summary_by_product, aes(x = product, y = loss_ratio)) +
+  geom_col(fill = "#C05621") +
+  scale_y_continuous(labels = percent) +
+  labs(
+    title = "Loss ratio by product",
+    x = "Product",
+    y = "Loss ratio"
+  ) +
+  theme_minimal()
+
+write_csv(portfolio, "data/processed/portfolio_clean.csv")
+```
+
+## AI Checkpoint
+
+Use AI to review the report for clarity, chart choice, and possible unsupported conclusions. Keep only suggestions that are supported by the actual data and analysis.

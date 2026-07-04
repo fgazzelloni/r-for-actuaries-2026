@@ -1,0 +1,14 @@
+policy_id,policyholder_id,product,region,driver_age,risk_score,exposure,earned_premium,policy_start
+P0001,H001,Motor,North,24,0.72,1.00,820,2025-01-01
+P0002,H002,Motor,South,41,0.38,1.00,610,2025-01-15
+P0003,H003,Home,North,55,0.31,1.00,540,2025-02-01
+P0004,H004,Motor,West,32,0.64,0.75,690,2025-03-01
+P0005,H005,Travel,East,29,0.44,0.50,180,2025-03-15
+P0006,H006,Home,South,67,0.58,1.00,760,2025-04-01
+P0007,H007,Motor,East,21,0.81,1.00,980,2025-04-10
+P0008,H008,Home,West,48,0.27,1.00,500,2025-05-01
+P0009,H009,Motor,North,36,0.52,0.80,700,2025-05-15
+P0010,H010,Travel,South,62,0.69,0.25,240,2025-06-01
+P0011,H011,Motor,West,44,0.46,1.00,640,2025-06-10
+P0012,H012,Home,East,39,0.35,1.00,560,2025-07-01
+

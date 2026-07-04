@@ -1,0 +1,77 @@
+---
+title: "Session 2: Reproducible Actuarial Analysis with R"
+---
+
+## Theme
+
+Turning validated data into actuarial insight.
+
+This session teaches the middle of the mini-project workflow: joining valid claims to policies, creating derived actuarial measures, and producing summaries that another actuary can check.
+
+## Learning Outcomes
+
+At the end of this session, participants will be able to:
+
+- Build a reproducible actuarial workflow in R.
+- Create derived variables and actuarial summary measures.
+- Write reusable functions for repetitive tasks.
+- Perform grouped summaries and simple statistical analyses.
+- Organise code for readability, reuse, and reproducibility.
+- Document assumptions and intermediate results within a Quarto notebook.
+
+## Case Study Milestone
+
+Participants reproduce Sections 3 and 4 of the mini-project:
+
+- Exclude unmatched claims from portfolio metrics after documenting them.
+- Summarise claims at policy level.
+- Join claim totals to policy records.
+- Create age bands and risk bands.
+- Calculate claim frequency, average severity, pure premium, and loss ratio.
+- Summarise results by product, region, age band, and risk band.
+
+## Suggested Timing
+
+| Time | Activity |
+|---:|---|
+| 15 min | Review data checks from Session 1 |
+| 30 min | Join policy and claims data |
+| 30 min | Create derived actuarial measures |
+| 25 min | Summarise by segment and risk profile |
+| 15 min | AI-assisted code review |
+| 5 min | Wrap-up |
+
+## Core Code From The Mini-Project
+
+```{r}
+#| eval: false
+
+# Keep only claims linked to known policies.
+valid_claims <- claims |>
+  semi_join(policies, by = "policy_id")
+
+# Summarise claims by policy before joining.
+claims_by_policy <- valid_claims |>
+  group_by(policy_id) |>
+  summarise(
+    claim_count = n(),
+    claim_amount = sum(claim_amount, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# Join policies to their claim totals.
+portfolio <- policies |>
+  left_join(claims_by_policy, by = "policy_id") |>
+  mutate(
+    claim_count = if_else(is.na(claim_count), 0L, claim_count),
+    claim_amount = if_else(is.na(claim_amount), 0, claim_amount),
+    claim_frequency = claim_count / exposure,
+    average_severity = if_else(claim_count > 0, claim_amount / claim_count, 0),
+    pure_premium = claim_amount / exposure,
+    loss_ratio = claim_amount / earned_premium
+  )
+```
+
+## AI Checkpoint
+
+Use AI to review the code structure and identify possible errors. Then verify the output yourself by checking row counts, totals, and whether policies with no claims are handled correctly.

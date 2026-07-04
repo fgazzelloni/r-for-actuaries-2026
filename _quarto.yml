@@ -1,0 +1,59 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "R for Actuaries 2026"
+  page-navigation: true
+  repo-actions: [edit, issue]
+  sidebar:
+    style: docked
+    search: true
+    contents:
+      - href: index.qmd
+        text: Course Overview
+      - section: Slides
+        contents:
+          - href: slides/r-for-actuaries-2026.qmd
+            text: Combined Course Deck
+      - section: Sessions
+        contents:
+          - href: sessions/01-introduction.qmd
+            text: "1. Introduction to R"
+          - href: sessions/02-analysis.qmd
+            text: "2. Actuarial Analysis"
+          - href: sessions/03-visualization.qmd
+            text: "3. Visualization and Reporting"
+      - section: Case Study
+        contents:
+          - href: case-study/actuarial-mini-project.qmd
+            text: Mini Project
+          - href: case-study/data_dictionary.qmd
+            text: Data Dictionary
+      - section: Exercises
+        contents:
+          - href: exercises/session01.qmd
+            text: Session 1
+          - href: exercises/session02.qmd
+            text: Session 2
+          - href: exercises/session03.qmd
+            text: Session 3
+      - section: AI Guidance
+        contents:
+          - href: ai/ai-use-guidelines.qmd
+            text: AI Use Guidelines
+          - href: ai/prompt-patterns.qmd
+            text: Prompt Patterns
+          - href: ai/ai-checkpoints.qmd
+            text: AI Checkpoints
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    link-external-newwindow: true
+
+execute:
+  freeze: auto

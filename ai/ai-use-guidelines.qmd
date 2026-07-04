@@ -1,0 +1,22 @@
+---
+title: "AI Use Guidelines"
+---
+
+AI can support learning, debugging, and code review, but the analyst remains responsible for every conclusion.
+
+Use AI to:
+
+- Explain unfamiliar R code.
+- Translate error messages into possible causes.
+- Draft first-pass code for review.
+- Suggest checks for assumptions.
+- Improve comments, captions, and report language.
+
+Do not use AI to:
+
+- Replace inspecting the data.
+- Invent columns or assumptions.
+- Accept code that has not been run.
+- Explain results without checking outputs.
+- Make actuarial judgements without human review.
+
