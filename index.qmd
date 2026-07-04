@@ -7,6 +7,8 @@ subtitle: "Reproducible Analysis, Visualization, and AI-Assisted Learning"
 
 This repository contains the teaching materials for the 2026 cohort of R for Actuaries.
 
+Published course website: <https://fgazzelloni.github.io/r-for-actuaries-2026/>
+
 This three-session course introduces R through a realistic actuarial workflow. Participants work on one mini-project that starts with raw policy and claims data and ends with a reproducible Quarto report.
 
 The course is designed around a professional principle:

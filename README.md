@@ -4,6 +4,8 @@ Course materials for **R for Actuaries 2026: Reproducible Analysis, Visualizatio
 
 This repository contains the teaching materials for the 2026 cohort of R for Actuaries.
 
+Published course website: <https://fgazzelloni.github.io/r-for-actuaries-2026/>
+
 The course follows one actuarial mini-project across three two-hour sessions:
 
 1. Introduction to R for Actuaries

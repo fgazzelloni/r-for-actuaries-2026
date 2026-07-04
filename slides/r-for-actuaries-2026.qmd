@@ -1,6 +1,8 @@
 ---
 title: "R for Actuaries 2026"
 subtitle: "Reproducible Analysis, Visualization, and AI-Assisted Learning"
+author: "Federica Gazzelloni"
+date: "27 August 2026"
 format:
   revealjs:
     theme: simple
@@ -19,84 +21,132 @@ execute:
   message: false
 ---
 
+## Before Modelling {.hook-slide}
+
+::: {.scenario-card}
+You receive policy and claims data.
+
+Before modelling anything, can you trust the data?
+:::
+
+::: {.mini-prompt}
+Today we use R to answer that question step by step.
+:::
+
 ## Course Principle {.statement-slide}
 
 > Write code that another actuary can understand, reproduce, and trust.
 
-## What You Will Learn {.cards-slide}
+## One-Day Learning Path {.path-slide}
 
-::: {.card-grid}
-::: {.metric-card .icon-card}
-**Work with data**
+::: {.day-path}
+::: {.path-item}
+**Welcome**
 
-Import and validate actuarial datasets.
+Orientation
 :::
 
-::: {.metric-card .icon-card}
-**Analyse**
+::: {.path-item}
+**Session 1**
 
-Create measures and summaries.
+Import and validate
 :::
 
-::: {.metric-card .icon-card}
-**Visualise**
-
-Build charts that explain results.
+::: {.path-item .pause-chip}
+5-minute pause
 :::
 
-::: {.metric-card .icon-card}
-**Report**
+::: {.path-item}
+**Session 2**
 
-Communicate reproducible findings.
+Analyse
+:::
+
+::: {.path-item .pause-chip}
+5-minute pause
+:::
+
+::: {.path-item}
+**Session 3**
+
+Visualise, report, use AI
+:::
+
+::: {.path-item}
+**Practical**
+
+Mini-project
 :::
 :::
 
-## Instructor {.profile-slide}
+## Reproducible Actuarial Workflow {.workflow-slide}
+
+::: {.workflow-ribbon .six-steps}
+::: {.workflow-step}
+Raw data
+:::
+
+::: {.workflow-step}
+Validation
+:::
+
+::: {.workflow-step}
+Analysis
+:::
+
+::: {.workflow-step}
+Visualisation
+:::
+
+::: {.workflow-step}
+Quarto report
+:::
+
+::: {.workflow-step}
+GitHub publication
+:::
+:::
+
+::: {.mini-prompt}
+The workflow is part of the actuarial deliverable.
+:::
+
+## Practical Mini-Project {.split-slide}
 
 ::: {.columns}
-::: {.column width="58%"}
-Federica Gazzelloni is an actuary, statistician, data scientist, author, and educator.
-
-She develops training on R, Quarto, visualization, reproducible workflows, and AI-assisted analysis for actuarial and data science audiences.
-:::
-
-::: {.column width="36%"}
-::: {.info-card .accent-card}
-**Training focus**
-
-Actuarial modelling · reproducible research · communication
-:::
-
-[Website](https://federicagazzelloni.com/)  
-[LinkedIn](https://www.linkedin.com/in/federicagazzelloni/)
-:::
-:::
-
-## Learning Journey {.figure-slide}
-
-![](figures/course-workflow.png){fig-alt="Course workflow from import to report"}
-
-::: {.caption}
-The same case study develops across all three sessions.
-:::
-
-## One Case Study {.split-slide}
-
-::: {.columns}
-::: {.column width="54%"}
+::: {.column width="55%"}
 ![](figures/policy-sample-table.png){fig-alt="Sample policy data table"}
 :::
 
-::: {.column width="40%"}
+::: {.column width="39%"}
 ::: {.step-card .accent-card}
-**Raw data becomes**
+**One case study**
 
-Check  
-Analyse  
-Visualise  
-Report
+Policies<br>
+Claims<br>
+Validation<br>
+Actuarial measures<br>
+Charts and report
 :::
 :::
+:::
+
+## R Setup And Project Structure {.setup-slide}
+
+::: {.folder-map}
+```text
+r-for-actuaries-2026/
+  data/
+    raw/
+    processed/
+  case-study/
+  sessions/
+  slides/
+```
+:::
+
+::: {.callout}
+Open the R Project first. Work from the project root.
 :::
 
 ## Session 1 {.section-slide}
@@ -105,18 +155,61 @@ Report
 01
 :::
 
-### From raw data to clean data
+### From raw data to checked data
 
 ::: {.section-tags .accent-block}
-Import · Inspect · Validate · Document
+Import · Inspect · Validate
 :::
 
-## Session 1: Visual Check {.figure-slide}
+## Data Import {.code-slide}
+
+::: {.columns}
+::: {.column width="44%"}
+```r
+library(readr)
+
+policies <- read_csv("data/raw/policies.csv")
+claims <- read_csv("data/raw/claims.csv")
+
+glimpse(policies)
+```
+:::
+
+::: {.column width="50%"}
+![](figures/policy-sample-table.png){fig-alt="Sample policy data table"}
+
+::: {.caption}
+Start by making the data visible.
+:::
+:::
+:::
+
+## Data Validation {.figure-slide}
 
 ![](figures/validation-summary-table.png){fig-alt="Validation summary table"}
 
-::: {.caption}
-Key checks happen before actuarial interpretation.
+::: {.check-strip}
+Missing values · Duplicates · Dates · Policy IDs · Numeric ranges
+:::
+
+## Discussion {.prompt-slide}
+
+::: {.question-card}
+What would you check before calculating claim frequency?
+:::
+
+::: {.prompt-actions}
+Inspect the data · Talk to the person next to you · Name one risk
+:::
+
+## 5-Minute Pause {.pause-slide}
+
+::: {.pause-time}
+5
+:::
+
+::: {.mini-prompt}
+Stretch, reset, and keep the project open.
 :::
 
 ## Session 2 {.section-slide}
@@ -125,54 +218,88 @@ Key checks happen before actuarial interpretation.
 02
 :::
 
-### From clean data to actuarial insight
+### From checked data to actuarial insight
 
 ::: {.section-tags .accent-block}
 Join · Derive · Summarise
 :::
 
-## Core Measures {.cards-slide}
+## Join Policies And Claims {.code-slide}
+
+::: {.columns}
+::: {.column width="45%"}
+```r
+portfolio <- claims |>
+  left_join(policies, by = "policy_id")
+
+portfolio |>
+  count(product, claim_type)
+```
+:::
+
+::: {.column width="47%"}
+::: {.join-diagram}
+Policies
+
+Claims
+
+Portfolio view
+:::
+:::
+:::
+
+## Core Actuarial Measures {.cards-slide}
 
 ::: {.card-grid}
 ::: {.metric-card}
 **Frequency**
 
-How often?
+Claims / exposure
 :::
 
 ::: {.metric-card}
 **Severity**
 
-How large?
+Claim cost / claims
 :::
 
 ::: {.metric-card}
 **Pure premium**
 
-How much per exposure?
+Claims / exposure
 :::
 
 ::: {.metric-card}
 **Loss ratio**
 
-How much of premium?
+Claims / premium
 :::
 :::
 
-## Premium View {.figure-slide}
+## Portfolio Summary {.figure-slide}
 
 ![](figures/earned-premium-by-product.png){fig-alt="Earned premium by product chart"}
 
 ::: {.caption}
-Start with portfolio size and premium.
+Use summaries to understand portfolio shape before interpretation.
 :::
 
 ## Loss Ratio View {.figure-slide}
 
 ![](figures/loss-ratio-by-product.png){fig-alt="Loss ratio by product chart"}
 
-::: {.caption}
-Connect claims to premium in one interpretable measure.
+::: {.question-line}
+Which product would you investigate first?
+:::
+
+## 5-Minute Pause {.pause-slide}
+
+::: {.pause-time}
+5
+:::
+
+::: {.mini-prompt}
+Next: make the analysis communicable.
 :::
 
 ## Session 3 {.section-slide}
@@ -184,115 +311,93 @@ Connect claims to premium in one interpretable measure.
 ### From analysis to communication
 
 ::: {.section-tags .accent-block}
-Choose charts · Explain results · Render report
+Visualise · Explain · Render
 :::
 
-## Claims By Type {.figure-slide}
-
-![](figures/claim-amount-by-type.png){fig-alt="Claim amount by claim type chart"}
-
-::: {.caption}
-Show where claim cost is concentrated.
-:::
-
-## Risk Band View {.figure-slide}
+## Visualisation Answers Questions {.figure-slide}
 
 ![](figures/claim-frequency-by-risk-band.png){fig-alt="Claim frequency by risk band chart"}
 
 ::: {.caption}
-Turn row-level data into an actuarial comparison.
+Charts should answer actuarial questions, not decorate reports.
 :::
 
-## AI Checkpoint {.section-slide}
+## Quarto Reporting {.report-slide}
 
-::: {.section-number}
-AI
+::: {.report-grid}
+::: {.report-block}
+Code
 :::
 
-### AI supports learning. It does not replace judgement.
-
-::: {.section-tags .accent-block}
-Explain · Debug · Verify · Rewrite
+::: {.report-block}
+Text
 :::
 
-## AI Workflow {.cards-slide}
-
-::: {.card-grid}
-::: {.metric-card}
-**Try**
-
-Start yourself.
+::: {.report-block}
+Tables
 :::
 
-::: {.metric-card}
-**Ask**
-
-Explain or debug.
-:::
-
-::: {.metric-card}
-**Check**
-
-Run and inspect.
-:::
-
-::: {.metric-card}
-**Rewrite**
-
-Use your own words.
+::: {.report-block}
+Figures
 :::
 :::
 
-## Quarto + GitHub {.statement-slide}
-
-::: {.workflow-ribbon}
-::: {.workflow-step}
-R Project
+::: {.callout}
+Render the mini-project notebook into a report another actuary can review.
 :::
 
-::: {.workflow-step}
-Quarto
+## AI-Assisted Learning {.ai-slide}
+
+::: {.ai-checkpoint}
+**AI checkpoint**
+
+1. Try the task yourself.
+2. Ask AI to explain or debug.
+3. Run the code.
+4. Check object names, data dimensions, missing values, and outputs.
+5. Rewrite the result in your own words.
 :::
 
-::: {.workflow-step}
-Git commit
+::: {.mini-prompt}
+AI is a tutor, reviewer, and debugging partner, not an autopilot.
 :::
 
-::: {.workflow-step}
-GitHub
+## Practical Session {.practical-slide}
+
+::: {.task-grid}
+::: {.task-card}
+Import data
 :::
 
-::: {.workflow-step}
-Published report
+::: {.task-card}
+Validate checks
+:::
+
+::: {.task-card}
+Create measures
+:::
+
+::: {.task-card}
+Produce plots
+:::
+
+::: {.task-card}
+Render report
 :::
 :::
 
-Reproducibility is part of the actuarial deliverable.
+::: {.link-pill}
+[Open the mini-project notebook](../case-study/actuarial-mini-project.html)
+:::
 
-## Teaching Materials {.cards-slide}
+## Close {.closing-slide}
+
+::: {.closing-principle}
+Write code that another actuary can understand, reproduce, and trust.
+:::
 
 ::: {.link-list}
-[Course overview](../index.html)  
-[Session 1](../sessions/01-introduction.html)  
-[Session 2](../sessions/02-analysis.html)  
-[Session 3](../sessions/03-visualization.html)  
+[Course materials](../index.html)
 [Mini-project](../case-study/actuarial-mini-project.html)
+[GitHub repository](https://github.com/fgazzelloni/r-for-actuaries-2026)
 :::
-
-## Final Outcome {.section-slide}
-
-::: {.section-number}
-OUT
-:::
-
-### Participants leave with a reusable workflow.
-
-::: {.section-tags .accent-block}
-Analysis · Dataset · Charts · Report
-:::
-
-## Close {.statement-slide}
-
-The goal is not to memorise R functions.
-
-The goal is to solve actuarial problems in a way another actuary can understand, reproduce, and trust.
