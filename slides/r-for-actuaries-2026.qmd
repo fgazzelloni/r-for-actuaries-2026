@@ -1,6 +1,6 @@
 ---
 title: "R for Actuaries 2026"
-subtitle: "Reproducible Analysis, Visualization, and AI-Assisted Learning"
+subtitle: "Reproducible Analysis, Visualization,<br>and AI-Assisted Learning"
 author: "Federica Gazzelloni"
 date: "27 August 2026"
 format:
@@ -11,7 +11,11 @@ format:
     chalkboard: true
     preview-links: auto
     code-copy: true
-    footer: "R for Actuaries 2026"
+    footer: "ACTEX Bootcamp: R for Actuaries 2026"
+    title-slide-attributes:
+      data-background-image: "backgrounds/actex-cover-bg.png"
+      data-background-size: "cover"
+      data-background-position: "center"
     include-after-body:
       text: |
         <a class="course-back-link" href="../index.html">Back to course materials</a>
@@ -173,8 +177,6 @@ Import · Inspect · Validate
 
 ## Data Import {.code-slide}
 
-::: {.columns}
-::: {.column width="44%"}
 ```r
 library(readr)
 
@@ -183,15 +185,9 @@ c <- read_csv("data/raw/claims.csv")
 
 glimpse(p)
 ```
-:::
 
-::: {.column width="50%"}
-![](figures/policy-sample-table.png){fig-alt="Sample policy data table"}
-
-::: {.caption}
+::: {.code-note}
 Start by making the data visible.
-:::
-:::
 :::
 
 ## Data Validation {.figure-slide}
@@ -240,24 +236,18 @@ Join · Derive · Summarise
 
 ## Join Policies And Claims {.code-slide}
 
-::: {.columns}
-::: {.column width="45%"}
 ```r
 portfolio <- c |>
   left_join(p, by = "policy_id") |>
   count(product, claim_type)
 ```
-:::
 
-::: {.column width="47%"}
 ::: {.join-diagram}
 Policies
 
 Claims
 
 Portfolio view
-:::
-:::
 :::
 
 ## Core Actuarial Measures {.cards-slide}
@@ -418,7 +408,7 @@ Render report
 [Open the mini-project notebook](../case-study/actuarial-mini-project.html)
 :::
 
-## Close {.closing-slide}
+## Close {.closing-slide data-background-image="backgrounds/actex-cover-bg.png" data-background-size="cover" data-background-position="center"}
 
 ::: {.closing-principle}
 Write code that another actuary can understand, reproduce, and trust.
