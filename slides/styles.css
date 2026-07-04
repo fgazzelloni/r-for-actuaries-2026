@@ -1,0 +1,26 @@
+.course-back-link {
+  position: fixed;
+  top: 0.8rem;
+  right: 1rem;
+  z-index: 50;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #d0d7de;
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1f2937;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.62rem;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.course-back-link:hover,
+.course-back-link:focus {
+  color: #0b5cad;
+  text-decoration: underline;
+}
+
+.reveal .slides {
+  margin-top: 0.25rem;
+}

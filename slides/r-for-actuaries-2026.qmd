@@ -4,225 +4,185 @@ subtitle: "Reproducible Analysis, Visualization, and AI-Assisted Learning"
 format:
   revealjs:
     theme: simple
+    css: styles.css
     slide-number: true
     chalkboard: true
     preview-links: auto
     code-copy: true
     footer: "R for Actuaries 2026"
+    include-after-body:
+      text: |
+        <a class="course-back-link" href="../index.html">Back to course materials</a>
 execute:
-  echo: true
+  echo: false
   warning: false
   message: false
 ---
 
-## 2026 Cohort
+## R for Actuaries 2026
 
-This repository contains the teaching materials for the 2026 cohort of R for Actuaries.
+Reproducible analysis, visualization, and AI-assisted learning.
 
-[Back to course materials](../index.html)
-
-Professional principle:
-
-> Write code that another actuary can understand, reproduce, and trust.
+::: {.callout-note}
+2026 cohort teaching materials.
+:::
 
 ::: {.notes}
 Open by positioning the course as professional actuarial workflow training, not a generic introduction to R syntax.
 :::
 
-## Instructor
+## Course Principle
 
-Federica Gazzelloni is an actuary, statistician, data scientist, author, and educator with expertise in actuarial modelling, health metrics, statistical computing, and reproducible research. She is the author of *Health Metrics and the Spread of Infectious Diseases* (CRC Press) and *CP2 Modelling Practice and Communication* (ACTEX Learning), and has extensive experience developing educational material for actuarial and data science audiences.
+> Write code that another actuary can understand, reproduce, and trust.
 
-A Certified Carpentries Instructor and Lead Organizer of Rome R Users Group, Federica designs and delivers training on R, Quarto, data visualization, reproducible workflows, and AI-assisted data analysis. Her work combines actuarial science with modern open-source tools to promote transparent, reproducible, and collaborative analytical practices.
+## Instructor {.smaller}
 
-Her research and teaching focus on actuarial modelling, health data analytics, statistical methods, and the effective communication of analytical results, helping professionals build practical skills that can be applied to real-world actuarial and data science problems.
+Federica Gazzelloni is an actuary, statistician, data scientist, author, and educator specializing in actuarial modelling, health metrics, statistical computing, and reproducible research.
 
-- Website: [federicagazzelloni.com](https://federicagazzelloni.com/)
-- LinkedIn: [federicagazzelloni](https://www.linkedin.com/in/federicagazzelloni/)
+She is the author of *Health Metrics and the Spread of Infectious Diseases* and *CP2 Modelling Practice and Communication*.
 
-::: {.notes}
-Use this slide briefly. The written course pages contain the same profile text for reference.
+[Website](https://federicagazzelloni.com/) · [LinkedIn](https://www.linkedin.com/in/federicagazzelloni/)
+
+## Learning Journey
+
+![](figures/course-workflow.png){fig-alt="Course workflow from import to report" width="92%"}
+
+The same case study develops across all three sessions.
+
+## One Case Study
+
+::: {.columns}
+::: {.column width="48%"}
+![](figures/policy-sample-table.png){fig-alt="Sample policy data table" width="100%"}
 :::
 
-## Course Learning Journey
+::: {.column width="52%"}
+Raw policy and claims data become:
 
-```text
-Claims and policy data
-  -> data validation and preparation
-  -> reproducible actuarial analysis
-  -> data visualization
-  -> Quarto report
-  -> GitHub publication
-```
+- validated data
+- actuarial measures
+- charts
+- a Quarto report
+:::
+:::
 
-## One Mini-Project
+## Session 1
 
-Participants work on one mini-project that starts with raw policy and claims data and ends with a reproducible Quarto report.
+### From raw data to clean data
 
-The slides guide the teaching.
+Focus:
 
-The Quarto notebooks are the working materials.
+- import
+- inspect
+- validate
+- document
 
-## Course Structure
+## Session 1 Visual Check
 
-1. **Introduction to R for Actuaries**
+![](figures/validation-summary-table.png){fig-alt="Validation summary table" width="82%"}
 
-   Import data, inspect structure, and perform data checks.
+One unmatched claim is intentional: students learn to check keys before analysis.
 
-2. **Reproducible Actuarial Analysis with R**
+## Session 2
 
-   Create derived measures, summaries, and simple analysis outputs.
+### From clean data to actuarial insight
 
-3. **Data Visualization and Reporting with Quarto**
+Focus:
 
-   Communicate findings with charts, tables, and a concise report.
+- join policy and claim records
+- create derived measures
+- summarise by segment
 
-## Session 1 Overview
+## Core Measures
 
-**Theme:** From raw actuarial data to a clean dataset.
-
-Participants learn to:
-
-- Navigate RStudio and organise an R Project.
-- Import actuarial datasets into R.
-- Understand the main R data structures used in actuarial analysis.
-- Manipulate and validate policy and claims data using `dplyr`.
-
-## Session 1 Milestone
-
-Participants reproduce Sections 1 and 2 of the mini-project:
-
-- Read `data/raw/policies.csv`.
-- Read `data/raw/claims.csv`.
-- Convert date columns.
-- Check row counts, missing values, duplicates, policy IDs, claim dates, and numeric ranges.
-- Document what they found.
-
-## Session 2 Overview
-
-**Theme:** Turning validated data into actuarial insight.
-
-Participants learn to:
-
-- Build a reproducible actuarial workflow in R.
-- Create derived variables and actuarial summary measures.
-- Write reusable functions for repetitive tasks.
-- Perform grouped summaries and simple statistical analyses.
-
-## Session 2 Milestone
-
-Participants reproduce Sections 3 and 4 of the mini-project:
-
-- Exclude unmatched claims from portfolio metrics after documenting them.
-- Summarise claims at policy level.
-- Join claim totals to policy records.
-- Calculate claim frequency, average severity, pure premium, and loss ratio.
-- Summarise results by product, region, age band, and risk band.
-
-## Session 3 Overview
-
-**Theme:** Communicating actuarial results.
-
-Participants learn to:
-
-- Produce effective visualisations using `ggplot2`.
-- Select appropriate graphics for actuarial summaries and comparisons.
-- Integrate narrative, code, tables, and figures within Quarto.
-- Present actuarial findings clearly to technical and non-technical audiences.
-
-## Session 3 Milestone
-
-Participants reproduce Sections 5 and 6 of the mini-project:
-
-- Create reusable plots for product, claim type, and risk-band summaries.
-- Explain what each chart shows.
-- Save `data/processed/portfolio_clean.csv`.
-- Render the final Quarto report.
-
-## Mini-Project Workflow
-
-1. Import `policies.csv` and `claims.csv`.
-2. Validate row counts, missing values, duplicates, keys, dates, and numeric ranges.
-3. Join policy and claim records.
-4. Create derived actuarial measures.
-5. Summarise results by portfolio segment.
-6. Create charts for communication.
-7. Save the clean processed dataset.
-
-## The Core Actuarial Measures
-
-The project keeps modelling light and practical.
-
-| Measure | Teaching purpose |
+| Measure | Question |
 |---|---|
-| Claim frequency | Claims per exposure |
-| Average severity | Claim amount per claim |
-| Pure premium | Claim amount per exposure |
-| Loss ratio | Claim amount divided by earned premium |
+| Claim frequency | How often? |
+| Average severity | How large? |
+| Pure premium | How much per exposure? |
+| Loss ratio | How much of premium is used by claims? |
+
+## Session 2 Example
+
+![](figures/earned-premium-by-product.png){fig-alt="Earned premium by product chart" width="88%"}
+
+Start with portfolio size and premium before interpreting claim outcomes.
+
+## Session 2 Example
+
+![](figures/loss-ratio-by-product.png){fig-alt="Loss ratio by product chart" width="88%"}
+
+Loss ratio connects claims to premium in one interpretable measure.
+
+## Session 3
+
+### From analysis to communication
+
+Focus:
+
+- choose clear charts
+- write short interpretations
+- render a Quarto report
+
+## Session 3 Example
+
+![](figures/claim-amount-by-type.png){fig-alt="Claim amount by claim type chart" width="88%"}
+
+Use charts to show where claim cost is concentrated.
+
+## Session 3 Example
+
+![](figures/claim-frequency-by-risk-band.png){fig-alt="Claim frequency by risk band chart" width="88%"}
+
+Risk bands turn row-level data into an actuarial comparison.
 
 ## AI Checkpoint
 
-Use this checkpoint in every session:
+1. Try it yourself.
+2. Ask AI to explain or debug.
+3. Run the code.
+4. Check data, dimensions, and outputs.
+5. Rewrite the result in your own words.
 
-1. Attempt the task independently.
-2. Ask AI to explain unfamiliar code.
-3. Ask AI to identify possible bugs or assumptions.
-4. Run and validate the code yourself.
-5. Check object names, data dimensions, missing values, and outputs.
-6. Rewrite the explanation in your own words.
+## AI Is Not Autopilot
 
-## AI Role In The Course
+Use AI for:
 
-AI is a learning assistant, not an autopilot.
+- explanation
+- debugging
+- first drafts
+- assumption checks
 
-Use AI to:
+Keep actuarial judgement with the analyst.
 
-- Explain code.
-- Debug errors.
-- Draft first-pass code for review.
-- Suggest assumption checks.
-- Improve explanations and captions.
-
-Always verify outputs against the data.
-
-## GitHub And Quarto Workflow
+## Quarto + GitHub
 
 ```text
-R Project
-  -> Quarto notebook
-  -> checked code and outputs
-  -> Git commit
-  -> GitHub repository
-  -> published course/report
+R Project -> Quarto -> Git commit -> GitHub -> published report
 ```
 
 Reproducibility is part of the actuarial deliverable.
 
 ## Teaching Materials
 
-Use the website pages for live teaching:
-
-- [Course overview](../index.qmd)
-- [Session 1](../sessions/01-introduction.qmd)
-- [Session 2](../sessions/02-analysis.qmd)
-- [Session 3](../sessions/03-visualization.qmd)
-- [Mini-project](../case-study/actuarial-mini-project.qmd)
-- [AI checkpoints](../ai/ai-checkpoints.qmd)
+- [Course overview](../index.html)
+- [Session 1](../sessions/01-introduction.html)
+- [Session 2](../sessions/02-analysis.html)
+- [Session 3](../sessions/03-visualization.html)
+- [Mini-project](../case-study/actuarial-mini-project.html)
 
 ## Final Outcome
 
-By the end of the course, participants have:
+Participants leave with:
 
-- A reproducible actuarial analysis.
-- A clean processed dataset.
-- A small set of clear charts.
-- A Quarto report with code, tables, figures, and interpretation.
-- A workflow they can reuse after the course.
+- a reproducible analysis
+- a clean processed dataset
+- clear charts
+- a Quarto report
+- a reusable workflow
 
 ## Close
 
 The goal is not to memorise R functions.
 
 The goal is to solve actuarial problems in a way another actuary can understand, reproduce, and trust.
-
-[Back to course materials](../index.html)
