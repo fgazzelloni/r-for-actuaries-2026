@@ -302,21 +302,21 @@
 }
 
 .code-slide pre {
-  width: 91%;
+  width: 94%;
   margin: 0.55em auto 0.28em;
   box-shadow: none;
 }
 
 .code-slide code {
   border-radius: 0.45em;
-  font-size: 0.58em;
-  line-height: 1.28;
+  font-size: 0.7em;
+  line-height: 1.3;
   white-space: pre-wrap;
 }
 
 .code-slide .code-note,
 .code-slide .join-diagram {
-  width: 91%;
+  width: 94%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -556,19 +556,30 @@
 }
 
 .closing-slide .closing-principle {
-  max-width: 50%;
-  margin-left: 20rem;
+  max-width: 54%;
+  margin-left: 19rem;
   background: rgba(255, 255, 255, 0.94);
-  font-size: 0.9em;
+  font-size: 0.98em;
   font-weight: 820;
+}
+
+.closing-slide h2 {
+  display: inline-block;
+  width: auto;
+  margin-left: 19rem;
+  padding: 0.22em 0.5em;
+  border-radius: 0.28em;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--navy);
+  box-shadow: 0 6px 18px rgba(8, 40, 61, 0.08);
 }
 
 .link-list {
   display: grid;
   gap: 0.36em;
-  max-width: 45%;
+  max-width: 49%;
   margin-top: 0.75em;
-  margin-left: 20rem;
+  margin-left: 19rem;
 }
 
 .link-list a {
@@ -579,7 +590,7 @@
   border-radius: 0.32em;
   background: rgba(255, 255, 255, 0.94);
   color: var(--navy);
-  font-size: 0.64em;
+  font-size: 0.72em;
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(8, 40, 61, 0.06);
 }
@@ -595,8 +606,8 @@
 }
 
 .reveal .code-slide pre code {
-  font-size: 0.58em;
-  line-height: 1.28;
+  font-size: 0.7em;
+  line-height: 1.3;
 }
 
 .reveal .slide-number {
