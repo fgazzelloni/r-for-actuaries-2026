@@ -9,16 +9,12 @@ format:
     css: styles.css
     width: 1600
     height: 900
+    title-slide: false
     slide-number: true
     chalkboard: true
     preview-links: auto
     code-copy: true
     footer: "ACTEX Bootcamp: R for Actuaries 2026"
-    title-slide-attributes:
-      data-background-image: "backgrounds/actex-cover-bg.png"
-      data-background-size: "contain"
-      data-background-position: "center"
-      data-background-repeat: "no-repeat"
     include-after-body:
       text: |
         <a class="course-back-link" href="../index.html">Back to course materials</a>
@@ -27,6 +23,16 @@ execute:
   warning: false
   message: false
 ---
+
+## R for Actuaries 2026 {.cover-slide data-background-image="backgrounds/actex-cover-bg.png" data-background-size="contain" data-background-position="center" data-background-repeat="no-repeat"}
+
+::: {.cover-subtitle}
+Reproducible Analysis, Visualization, and AI-Assisted Learning
+:::
+
+::: {.cover-meta}
+27 August 2026 · Federica Gazzelloni
+:::
 
 ## Before Modelling {.hook-slide}
 
@@ -411,7 +417,7 @@ Render report
 [Open the mini-project notebook](../case-study/actuarial-mini-project.html)
 :::
 
-## Close {.closing-slide data-background-image="backgrounds/actex-cover-bg.png" data-background-size="contain" data-background-position="center" data-background-repeat="no-repeat"}
+## Thank You! {.closing-slide data-background-image="backgrounds/actex-cover-bg.png" data-background-size="contain" data-background-position="center" data-background-repeat="no-repeat"}
 
 ::: {.closing-principle}
 Write code that another actuary can understand, reproduce, and trust.

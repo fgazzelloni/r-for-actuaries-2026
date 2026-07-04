@@ -23,13 +23,6 @@
   background-size: cover;
 }
 
-.reveal .slide-background:first-child .slide-background-content {
-  background-image: url("backgrounds/actex-cover-bg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
 .reveal .slides {
   text-align: left;
   z-index: 2;
@@ -100,35 +93,6 @@
   text-decoration: none;
 }
 
-.reveal .quarto-title-block {
-  width: 54%;
-  margin-left: 19rem;
-  margin-top: 4.4rem;
-  text-align: left;
-}
-
-.reveal .quarto-title-block h1 {
-  color: var(--white);
-  font-size: 1.82em;
-  font-weight: 850;
-  line-height: 1;
-  margin-bottom: 0.18em;
-}
-
-.reveal .quarto-title-block .subtitle {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.6em;
-  line-height: 1.15;
-  margin-top: 0.45em;
-}
-
-.reveal .quarto-title-block .quarto-title-authors,
-.reveal .quarto-title-block .date {
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 0.42em;
-  margin-top: 0.45em;
-}
-
 .scenario-card,
 .question-card,
 .closing-principle {
@@ -161,6 +125,7 @@
   font-weight: 800;
 }
 
+.cover-slide,
 .statement-slide,
 .hook-slide,
 .pause-slide,
@@ -555,14 +520,7 @@
   text-decoration: none;
 }
 
-.closing-slide .closing-principle {
-  max-width: 54%;
-  margin-left: 19rem;
-  background: rgba(255, 255, 255, 0.94);
-  font-size: 0.98em;
-  font-weight: 820;
-}
-
+.cover-slide h2,
 .closing-slide h2 {
   display: inline-block;
   width: auto;
@@ -572,6 +530,36 @@
   background: rgba(255, 255, 255, 0.94);
   color: var(--navy);
   box-shadow: 0 6px 18px rgba(8, 40, 61, 0.08);
+}
+
+.cover-subtitle,
+.cover-meta,
+.closing-slide .closing-principle {
+  max-width: 54%;
+  margin-left: 19rem;
+  background: rgba(255, 255, 255, 0.94);
+  font-size: 0.98em;
+  font-weight: 820;
+}
+
+.cover-subtitle,
+.cover-meta {
+  padding: 0.46em 0.7em;
+  border-radius: 0.28em;
+  color: var(--navy);
+  box-shadow: 0 5px 16px rgba(8, 40, 61, 0.06);
+}
+
+.cover-subtitle {
+  margin-top: 0.8em;
+}
+
+.cover-meta {
+  display: inline-block;
+  width: auto;
+  margin-top: 0.5em;
+  border-left: 5px solid var(--orange);
+  font-size: 0.72em;
 }
 
 .link-list {
