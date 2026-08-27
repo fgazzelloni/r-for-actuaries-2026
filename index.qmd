@@ -17,7 +17,7 @@ The course is designed around a professional principle:
 
 ## Instructor
 
-Federica Gazzelloni is an actuary, statistician, data scientist, author, and educator with expertise in actuarial modelling, health metrics, statistical computing, and reproducible research. She is the author of *Health Metrics and the Spread of Infectious Diseases* (CRC Press) and *CP2 Modelling Practice and Communication* (ACTEX Learning), and has extensive experience developing educational material for actuarial and data science audiences.
+**Federica Gazzelloni** is a fully qualified senior actuary, statistician, data scientist, author, and educator with expertise in actuarial modelling, health metrics, statistical computing, and reproducible research. She is the author of *Health Metrics and the Spread of Infectious Diseases* (CRC Press) and *CP2 Modelling Practice and Communication* (ACTEX Learning), and has extensive experience developing educational material for actuarial and data science audiences.
 
 A Certified Carpentries Instructor and Lead Organizer of Rome R Users Group, Federica designs and delivers training on R, Quarto, data visualization, reproducible workflows, and AI-assisted data analysis. Her work combines actuarial science with modern open-source tools to promote transparent, reproducible, and collaborative analytical practices.
 
